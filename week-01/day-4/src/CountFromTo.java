@@ -17,7 +17,7 @@ public class CountFromTo {
             while (userInput1 < userInput2){
                 int i = 0;
                 System.out.println(userInput1);
-                userInput1 = userInput1 + 1;
+                userInput1++;
             }
         }
     }
