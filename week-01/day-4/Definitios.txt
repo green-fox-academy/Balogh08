@@ -1,0 +1,30 @@
+what type of programming language is Java?
+ - tipusos, strict szabályok, meg kell adni mindent
+what do we need to  write a program?
+ - szövegszerkesztõ program és számítógép
+what is a statement?
+ - egy darab lefuttatható utasítás pontos vesszõvel lezárva;
+what is a variable?
+ - érték amire késõsbb hivatkozni tudunk
+
+ week-01/day-1/Computer basics.docx
+        week-01/day-1/myFirstWebsite/
+        week-01/day-2/
+
+
+Balogh Botond@DESKTOP-M8GQICO MINGW64 /c/users/Balogh Botond/desktop/greenfox/Balogh08 (master)
+$ nano .gitignore
+
+Balogh Botond@DESKTOP-M8GQICO MINGW64 /c/users/Balogh Botond/desktop/greenfox/Balogh08 (master)
+$ ls ^C
+
+Balogh Botond@DESKTOP-M8GQICO MINGW64 /c/users/Balogh Botond/desktop/greenfox/Balogh08 (master)
+$ ls week-01/day-2/
+tuesday/
+
+Balogh Botond@DESKTOP-M8GQICO MINGW64 /c/users/Balogh Botond/desktop/greenfox/Balogh08 (master)
+$ ls week-01/day-2/tuesday
+'~$Keys.xlsx'   Block_Project/   Block_Project_2/   Keys.xlsx   myapp/   myapp2/
+~¡^^
+
+

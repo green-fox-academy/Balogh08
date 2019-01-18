@@ -1,0 +1,20 @@
+Instructuins:
+ - megmondják a gépnek hogy mit kell csinálni
+MEmory Address:
+ - gép memóriájánaka kódja
+Programming language
+ - complied: java; kell egy másik program ami lefutatjaa kódot, kell egy complier
+ - interpreted: javascript, folyamatosan lefut és értelmezi a chrome
+
+ - statics: java; minden változót meg kell adni elõre
+ - dynamic: javascript; csak megadod hogy "a" és kész, nem kell definiálni
+
+ - imperative: java; soronként elemzi a  változókat
+ - functional: nem soronként olvassa a stateket, majd késõbb megértjük
+
+source code:
+ - amit én gépelek be, például a változók elnevezésse, hogy megértsem.
+Machone code:
+ - a gép által írt kód
+Complier:
+ - 
