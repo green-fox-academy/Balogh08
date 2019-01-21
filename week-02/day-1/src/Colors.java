@@ -21,7 +21,7 @@ public class Colors {
                 System.out.print(colors[i][j] + ", ");
             }
             System.out.println("");
-            
+
         }
 
     }
