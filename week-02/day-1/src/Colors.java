@@ -18,7 +18,12 @@ public class Colors {
 
         for (int i = 0; i < colors.length; i++) {
             for (int j = 0; j < colors[i].length; j++) {
-                System.out.print(colors[i][j] + ", ");
+                if(colors[i][j] == null) {
+                    System.out.print("");
+                }
+                else{
+                    System.out.print(colors[i][j] + ", ");
+                }
             }
             System.out.println("");
         }
