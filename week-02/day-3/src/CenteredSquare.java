@@ -11,7 +11,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
             g.setColor(Color.green);
             g.fillRect(155,155,10,10);
-            
+
         }
 
         // Don't touch the code below
