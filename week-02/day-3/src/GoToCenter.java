@@ -24,7 +24,7 @@ public class GoToCenter {
 
         for (int i = 0; i < 101; i += 50) {
 
-            g.setColor(new Color(100 + colorValue, i + colorValue, 100 + colorValue));
+            g.setColor(new Color(colorValue + i));
             g.drawLine(xValue + i, yValue, 160, 160);
         }
 
