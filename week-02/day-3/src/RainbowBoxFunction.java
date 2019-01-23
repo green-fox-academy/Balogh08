@@ -15,21 +15,19 @@ public class RainbowBoxFunction {
         int rndRGB = (int)(Math.random()*255);
         int*/
 
-        int rndSize = (int) (Math.random() * 300);
+        int rndSize = (int) (Math.random() * 400);
 
         rainbowFunction(rndSize, g);
     }
     public static void rainbowFunction(int sizeOfRect, Graphics g){
 
-        for (int i = 0; i < 7; i++) {
+        Color[] color = {Color.pink,Color.red, Color.orange,Color.yellow,Color.green,Color.blue,new Color(221,160,221)};
+        for (int i = 0; i < color.length; i++) {
 
             sizeOfRect -= 10;
-            int colorOfRectR = (int) (Math.random() * 255);
-            int colorOfRectG = (int) (Math.random() * 255);
-            int colorOfRectB = (int) (Math.random() * 255);
             int posOfRect = 160 - sizeOfRect / 2;
 
-            g.setColor(new Color(colorOfRectR, colorOfRectG, colorOfRectB));
+            g.setColor(color[i]);
             g.fillRect(posOfRect, posOfRect, sizeOfRect, sizeOfRect);
         }
 
