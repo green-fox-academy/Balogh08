@@ -29,13 +29,6 @@ public class LinePlayQuarters {
             }
 
         }
-
-/*        for (int i = 0; i < WIDTH/20 - 2; i++) {
-            g.setColor(new Color(153,50,204));
-            g.drawLine(20 * (i + 2),0,320,(i +1) * 20);
-            g.setColor(Color.green);
-            g.drawLine(0,20 * (i + 2),20 * (i + 1),320);
-        }*/
     }
 
     // Don't touch the code below
