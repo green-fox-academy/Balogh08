@@ -11,24 +11,21 @@ public class EnvelopeStar {
 
         g.setColor(Color.black);
         g.fillRect(1,1,WIDTH,HEIGHT);
+        g.setColor(Color.green);
 
         for (int i = 0; i < 160/10; i++) {
-            g.setColor(Color.green);
             g.drawLine(10 * (i + 1),160,160,150 - (i * 10));
         }
 
         for (int i = 0; i < 160/10; i++) {
-            g.setColor(Color.green);
             g.drawLine(160,10 * (i),160 + (10 * i),160);
         }
 
         for (int i = 0; i < 160/10; i++) {
-            g.setColor(Color.green);
             g.drawLine(10 * (i + 1),160,160,170 + (i * 10));
         }
 
         for (int i = 0; i < 160/10; i++) {
-            g.setColor(Color.green);
             g.drawLine(160,320 - (10 * i),160 + (10 * i),160);
         }
     }
