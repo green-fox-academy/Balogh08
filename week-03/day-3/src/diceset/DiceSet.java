@@ -50,7 +50,7 @@ public class DiceSet {
                     diceSet.reroll(i);
             }
         }
-        
+
         System.out.println(diceSet.getCurrent());
         System.out.println("-------------");
 
