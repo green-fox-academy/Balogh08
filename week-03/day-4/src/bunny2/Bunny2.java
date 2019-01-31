@@ -12,7 +12,7 @@ public class Bunny2 {
         if (n % 2 == 0) {
             return 3 + numberOfWeirdBunniesEars(n -1);
         }
-        
+
         return 2 + numberOfWeirdBunniesEars(n -1);
     }
 }
