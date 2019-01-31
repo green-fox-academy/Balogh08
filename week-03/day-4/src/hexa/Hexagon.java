@@ -67,7 +67,7 @@ public class Hexagon {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.BLACK);
     }
 
     static class ImagePanel extends JPanel {
@@ -75,7 +75,6 @@ public class Hexagon {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-            this.setBackground(Color.black);
         }
     }
 
