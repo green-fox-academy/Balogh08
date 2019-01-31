@@ -7,12 +7,17 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Hexagon {
     public static void mainDraw(Graphics g){
-        g.setColor(Color.red);
         drawHexagonRecursive(0, 0, WIDTH, HEIGHT, g, 3);
     }
 
     public static void drawHexagonRecursive(int x, int y, int width, int height, Graphics g, int level){
+        int redColor = (int) (Math.random() * 255);
+        int greenColor = (int) (Math.random() * 255);
+        int blueColor = (int) (Math.random() * 255);
+
+        g.setColor(new Color(redColor, greenColor, blueColor));
         drawHexagon(x, y, width, height, g);
+
         if (level == 0) {
         }
         else{
@@ -70,7 +75,7 @@ public class Hexagon {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-            this.setBackground(Color.blue);
+            this.setBackground(Color.black);
         }
     }
 
