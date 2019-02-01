@@ -9,7 +9,8 @@ public class DrawCircles {
     public static void mainDraw(Graphics g) {
 
         Circle myCircle = new Circle();
-        myCircle.drawOvalInOval(10, 10, 512, g, 5);
+        myCircle.drawRandomOvalInOval(10, 10, 512, g, 5);
+        myCircle.drawOvalInOval(600, 10, 512, g, 5);
 
     }
 
@@ -27,7 +28,7 @@ public class DrawCircles {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.BLACK);
     }
 
     static class ImagePanel extends JPanel {
