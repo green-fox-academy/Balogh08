@@ -5,7 +5,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Triangles {
+public class DrawTriangles {
     public static void mainDraw(Graphics g) {
 
 
@@ -13,11 +13,8 @@ public class Triangles {
     }
 
     public static void drawRecursiveEquilateralTriangle(int x, int y, int width, Graphics g, int level){
-        int redColor = (int) (Math.random() * 255);
-        int greenColor = (int) (Math.random() * 255);
-        int blueColor = (int) (Math.random() * 255);
 
-        g.setColor(new Color(redColor, greenColor, blueColor));
+        setRandomColors(g);
 
         drawTriangle(x, y, width, g);
         if (level == 0) {
@@ -59,6 +56,15 @@ public class Triangles {
         coordinatesOfTriangle[1][2] = y + heightOfTriangle;
 
         g.drawPolygon(coordinatesOfTriangle[0], coordinatesOfTriangle[1], coordinatesOfTriangle[0].length);
+    }
+
+    public static void setRandomColors(Graphics g) {
+
+        int redColor = (int) (Math.random() * 255);
+        int greenColor = (int) (Math.random() * 255);
+        int blueColor = (int) (Math.random() * 255);
+
+        g.setColor(new Color(redColor, greenColor, blueColor));
     }
 
     // Don't touch the code below
