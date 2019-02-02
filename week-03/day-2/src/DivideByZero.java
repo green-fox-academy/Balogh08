@@ -18,7 +18,7 @@ public class DivideByZero {
             numToBeDivided = numToBeDivided / numByDivide;
             System.out.println(numToBeDivided);
         } catch (java.lang.ArithmeticException ex) {
-            System.out.println("fail");
+            System.err.println("fail");
         }
     }
 }
