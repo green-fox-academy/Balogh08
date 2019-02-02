@@ -17,7 +17,7 @@ public class PrintEachLine {
             List<String> lines = Files.readAllLines(filePath);
             System.out.println(lines.get(0));
         } catch (Exception e) {
-            System.out.println("Unable to read file: " + fileToBeOpened);
+            System.err.println("Unable to read file: " + fileToBeOpened);
         }
     }
 }
