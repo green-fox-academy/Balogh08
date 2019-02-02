@@ -6,13 +6,13 @@ public class DivideByZero {
 
         System.out.println("Give me a number by which 10 will be divided!");
         int userInput = scanner.nextInt();
-        int result = 10;
-
-        divideByZero(result,userInput);
+        divideByZero(userInput);
 
     }
 
-    public static void divideByZero(int numToBeDivided, int numByDivide){
+    public static void divideByZero( int numByDivide){
+
+        int numToBeDivided = 10;
 
         try {
             numToBeDivided = numToBeDivided / numByDivide;
