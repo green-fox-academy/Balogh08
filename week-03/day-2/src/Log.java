@@ -1,9 +1,8 @@
-import java.lang.reflect.Array;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.sort;
@@ -11,17 +10,19 @@ import static java.util.Arrays.sort;
 public class Log {
     public static void main(String[] args) {
         Path filePathOfIp = Paths.get("logs.txt");
-        List<String> arrayListOfUniqueIP = new ArrayList<>();
 
-        test1(arrayListOfUniqueIP,filePathOfIp);
+        getUniqueIPsAndPostGetRatio(filePathOfIp);
     }
 
 
-public static void test1(List<String> arrayFromGetValues, Path sourceFile){
-        try {
+public static void getUniqueIPsAndPostGetRatio(Path sourceFile){
+
+        List<String> arrayFromGetValues = new ArrayList<>();
+
+    try {
             arrayFromGetValues.addAll(Files.readAllLines(sourceFile));
         }catch ( Exception ex){
-            System.out.println("Oh, nooo! Something went wrong!");
+            System.err.println("Oh, nooo! Something went wrong!");
         }
 
         String[] arrayToStoreInitializedValues = arrayFromGetValues.toArray(new String[0]);
