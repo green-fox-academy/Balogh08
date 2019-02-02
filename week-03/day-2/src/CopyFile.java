@@ -11,8 +11,8 @@ public class CopyFile {
         Path copyThisFilesContent = Paths.get("definition.txt");
 
         writeLines(firstFilePath);
-        copyText(firstFilePath, secondFilePath);
-        copyText(copyThisFilesContent, secondFilePath);
+        System.out.println(copyText(firstFilePath, secondFilePath));;
+        System.out.println(copyText(copyThisFilesContent, secondFilePath));
 
     }
 
@@ -23,27 +23,36 @@ public class CopyFile {
         linesOfFile1.add("Second line to be copied");
         linesOfFile1.add("Third line to be copied");
 
+
         try {
             Files.write(fileToWriteLines, linesOfFile1);
         } catch(Exception ex) {
-            System.out.println("Oh, no! I could not write your" + fileToWriteLines);
+            System.err.println("Oh, no! I could not write your" + fileToWriteLines);
         }
-
 }
 
-    public static void copyText (Path copyFromFile, Path pasteToFile){
+
+    public static boolean copyText (Path copyFromFile, Path pasteToFile){
         List<String> existingLinesOfPasteToFile = new ArrayList<>();
+        boolean copySuccess = true;
+
+
         try {
             existingLinesOfPasteToFile = Files.readAllLines(pasteToFile);
         } catch (Exception ex) {
-            System.out.println("I'm sorry, " + pasteToFile + " does not exist yet.");
+            System.err.println("I'm sorry, " + pasteToFile + " does not exist yet.");
         }
+
 
         try {
             existingLinesOfPasteToFile.addAll(Files.readAllLines(copyFromFile));
             Files.write(pasteToFile, existingLinesOfPasteToFile);
         } catch (Exception ex) {
-            System.out.println("Oh, no! I could not copy your" + copyFromFile);
+            System.err.println("Oh, no! I could not copy your" + copyFromFile);
+            copySuccess = false;
         }
+
+
+        return copySuccess;
     }
 }
