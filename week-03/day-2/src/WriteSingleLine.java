@@ -7,9 +7,9 @@ import java.util.List;
 public class WriteSingleLine {
     public static void main(String[] args) {
 
-        Path filePath = Paths.get("my-file.txt");
-        addMyNameAndPrint(filePath);
+            Path filePath = Paths.get("my-file.txt");
 
+            addMyNameAndPrint(filePath);
 
     }
     public static void addMyNameAndPrint(Path fileToBeAdded){
@@ -19,11 +19,12 @@ public class WriteSingleLine {
 
 
         try {
+            System.out.println(Files.exists(fileToBeAdded));
             Files.write(fileToBeAdded, contentOfMyFile);
             List<String > lines = Files.readAllLines(fileToBeAdded);
             System.out.println(lines.get(0));
         } catch (Exception ex) {
-            System.out.println("Unable to write file: my-file.txt");
+            System.err.println("Unable to write file: my-file.txt");
         }
     }
 }
