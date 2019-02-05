@@ -6,10 +6,10 @@ public class Main {
         person1.introduce();
         person1.getGoal();
 
-        Student stud1 = new Student();
-        stud1.skipDays(10);
-        stud1.introduce();
-        stud1.getGoal();
+        Student student1 = new Student();
+        student1.skipDays(10);
+        student1.introduce();
+        student1.getGoal();
 
         Mentor mentor1 = new Mentor();
         mentor1.introduce();
@@ -19,5 +19,10 @@ public class Main {
         sponsor1.hire();
         sponsor1.introduce();
         sponsor1.getGoal();
+
+        Cohort greenFox = new Cohort("Green Fox");
+        greenFox.addMentor(mentor1);
+        greenFox.addStudent(student1);
+        greenFox.info();
     }
 }
