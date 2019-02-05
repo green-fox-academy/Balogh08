@@ -14,5 +14,10 @@ public class Main {
         Mentor mentor1 = new Mentor();
         mentor1.introduce();
         mentor1.getGoal();
+
+        Sponsor sponsor1 = new Sponsor();
+        sponsor1.hire();
+        sponsor1.introduce();
+        sponsor1.getGoal();
     }
 }
