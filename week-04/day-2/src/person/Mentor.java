@@ -1,4 +1,4 @@
-package homeexercise;
+package person;
 
 public class Mentor extends Person {
     String level = "intermediate";

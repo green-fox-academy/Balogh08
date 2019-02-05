@@ -1,4 +1,4 @@
-package homeexercise;
+package person;
 
 public class Student extends Person{
     String previousOrganization = "The Dalles Wathonka High School";

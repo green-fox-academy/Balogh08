@@ -1,4 +1,4 @@
-package homeexercise;
+package person;
 
 public class Sponsor extends Person {
 

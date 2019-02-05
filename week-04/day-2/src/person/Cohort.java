@@ -1,4 +1,4 @@
-package homeexercise;
+package person;
 
 import java.util.ArrayList;
 import java.util.List;
