@@ -5,7 +5,7 @@ public class Person {
     int age = 30;
     String gender = "female";
 
-    public Person () {
+    public Person() {
 
     }
 

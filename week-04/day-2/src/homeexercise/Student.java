@@ -9,9 +9,7 @@ public class Student extends Person{
     }
 
     public Student(String name, int age, String gender, String previousOrganization, int skippedDays) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        super(name, age, gender);
         this.previousOrganization = previousOrganization;
         this.skippedDays = skippedDays;
     }
