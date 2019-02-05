@@ -1,12 +1,14 @@
 package person;
 
 public class Person {
-    String name = "Jane Doe";
-    int age = 30;
-    String gender = "female";
+    String name;
+    int age;
+    String gender;
 
     public Person() {
-
+        name = "Jane Doe";
+        age = 30;
+        gender = "female";
     }
 
     public Person (String name, int age, String gender) {
