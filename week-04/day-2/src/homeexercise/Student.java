@@ -8,15 +8,14 @@ public class Student extends Person{
 
     }
 
-    public Student(String name, int age, String gender, String previousOrganization, int skippedDays) {
+    public Student(String name, int age, String gender, String previousOrganization) {
         super(name, age, gender);
         this.previousOrganization = previousOrganization;
-        this.skippedDays = skippedDays;
     }
 
     @Override
     public void getGoal() {
-        System.out.println("Be a junior software developer.");
+        System.out.println("My goal is: Be a junior software developer.");
     }
 
     @Override
