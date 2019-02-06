@@ -53,7 +53,7 @@ public class Garden {
                     plant.water += 0.4 * (pourWater/plantsToWater.size());
                 }
             }
-            
+
 
             System.out.println("Watering with " + pourWater);
             showGarden(name);
