@@ -22,6 +22,7 @@ public class Domino implements Comparable<Domino>{
         return "[" + left + ", " + right + "]";
     }
 
+    @Override
     public int compareTo(Domino domino){
         if(this.getLeftSide() < domino.getLeftSide()) {
             return -1;
