@@ -6,6 +6,7 @@ public class Pirate {
     int rumDrank = 0;
     boolean alive = true;
     String parrot;
+    boolean caption = false;
 
     public Pirate() {
 
@@ -17,51 +18,62 @@ public class Pirate {
 
     }
 
-    public void drinkSomeRum() {
-        rumDrank++;
+    public void drinkSomeRum() {rumDrank++;
     }
 
     public void drinkSomeRum(int numberOfRum) {
         if (alive && rumDrank < 5) {
             rumDrank += numberOfRum;
         }
-        else if (!alive){
+/*        else if (!alive){
             System.out.println("He's dead");
         }
         else {
             System.out.println(name + " is passed out!");
-        }
+        }*/
     }
 
     public void howsItGoingMate() {
-        if (rumDrank <= 4) {
+        if (rumDrank <= 4 && alive) {
             System.out.println("Pour me anudder!");;
         }
-        else {
-            System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+
+        else if (!alive){
+            System.out.println("He's dead");
+            }
+
+        else{
+            System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin? - he passed out");
             rumDrank = 0;
         }
     }
 
     public void die() {
-        alive = false;
+        if (alive = false) {
+            System.out.println(name + " is already dead.");
+        }
+
+        else{
+            alive = false;
+        }
     }
 
     public void brawl(Pirate otherPirate) {
         if (otherPirate.alive) {
             int oneThirdChance = (int) (Math.random() * 3);
+
             if (oneThirdChance == 1){
                 otherPirate.die();
-                System.out.println(otherPirate.name + " has died!");
+//                System.out.println(otherPirate.name + " has died!");
             }
 
             else if (oneThirdChance == 2) {
                 die();
-                System.out.println(name + " has died!");
+//                System.out.println(name + " has died!");
             }
 
             else{
-                System.out.println("They both have passed out!");
+//                System.out.println("They both have passed out!");
                 rumDrank = 0;
                 otherPirate.rumDrank = 0;
             }

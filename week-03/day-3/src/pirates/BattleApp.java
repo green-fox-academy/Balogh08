@@ -1,8 +1,7 @@
 package pirates;
 
-public class PiratesMain {
+public class BattleApp {
     public static void main(String[] args) {
-
         Ship firstShip = new Ship("Barcelona");
         Ship secondShip = new Ship("Real Madrid");
 
@@ -13,19 +12,20 @@ public class PiratesMain {
 
         firstShip.randomParty();
         secondShip.randomParty();
-        System.out.println(firstShip.battle(secondShip));;
+
+        System.out.println(firstShip.caption.rumDrank);
+        System.out.println(secondShip.caption.rumDrank);
+
+        do {
+            if (firstShip.crew.size() >= secondShip.crew.size()){
+                secondShip.battle(firstShip);
+            }
+            else {
+                firstShip.battle(secondShip);
+            }
+        } while (firstShip.crew.size() > 0 && secondShip.crew.size() > 0);
 
         firstShip.getStatus();
         secondShip.getStatus();
-
-        System.out.println(secondShip.battle(firstShip));;
-
-
-        Armada armada = new Armada("The Armada");
-        armada.fillArmada();
-
-
-
-
     }
 }
