@@ -1,16 +1,18 @@
 package person;
 
 public class Student extends Person{
-    String previousOrganization = "The Dalles Wathonka High School";
-    int skippedDays = 0;
+    String previousOrganization;
+    int skippedDays;
 
     public Student() {
-
+        this.previousOrganization = "The Dalles Wathonka High School";
+        this.skippedDays = 0;
     }
 
     public Student(String name, int age, String gender, String previousOrganization) {
         super(name, age, gender);
         this.previousOrganization = previousOrganization;
+        this.skippedDays = 0;
     }
 
     @Override
