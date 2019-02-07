@@ -32,12 +32,6 @@ public class SumOfElementsTest {
     }
 
     @Test
-    public void sum_EmptyList_ReturnsNull() {
-        ArrayList<Integer> input = new ArrayList<>(Arrays.asList());
-        assertEquals(0,SumOfElements.sum(input));
-    }
-
-    @Test
     public void sum_OneValue_ReturnsThatValue() {
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(5));
         assertEquals(5,SumOfElements.sum(input));
@@ -45,6 +39,13 @@ public class SumOfElementsTest {
 
     @Test(expected = NullPointerException.class)
     public void sum_NullValue_ReturnsThatValue() {
-        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(null));
+        int result = SumOfElements.sum(null);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void sum_EmptyList_ReturnsNull() {
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList());
+        int result = SumOfElements.sum(input);
     }
 }
