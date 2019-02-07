@@ -5,6 +5,9 @@ public class CalculatorPrepared {
 
     public static void main(String[] args) {
         System.out.println("Main called");
+
+        String name = null;
+        int name2 = name.length();
     }
 
     private List<Integer> numbers;

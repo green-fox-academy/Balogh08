@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 
 public class SumOfElements {
-    ArrayList<Integer> integerArrayList;
 
-    public SumOfElements(ArrayList<Integer> integerArrayList){
-        this.integerArrayList = integerArrayList;
-    }
+    public static int sum(ArrayList<Integer> yourArrayList) {
+        if (yourArrayList.equals(null)) {
+            throw new NullPointerException();
+        }
 
-    public int Sum() {
         int sum = 0;
-        for (Integer elements: integerArrayList
+        for (Integer elements: yourArrayList
              ) {
             sum += elements;
         }
