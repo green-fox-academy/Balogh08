@@ -26,7 +26,7 @@ public class CountLettersTest {
         testMap.put('l', 1);
         testMap.put('n', 1);
         testMap.put('o', 3);
-        assertEquals(testMap, dictionary.countLetters(word));
+        assertTrue(testMap.equals(dictionary.countLetters(word)));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class CountLettersTest {
         CountLetters dictionary = new CountLetters();
         String word = "";
         Map<Character, Integer> testMap = new HashMap<>();
-        assertEquals(testMap, dictionary.countLetters(word));
+        assertTrue(testMap.equals(dictionary.countLetters(word)));
     }
 
     @Test (expected = NullPointerException.class)
@@ -42,6 +42,6 @@ public class CountLettersTest {
         CountLetters dictionary = new CountLetters();
         String word = null;
         Map<Character, Integer> testMap = new HashMap<>();
-        assertEquals(testMap, dictionary.countLetters(word));
+        assertTrue(testMap.equals(dictionary.countLetters(word)));
     }
 }
