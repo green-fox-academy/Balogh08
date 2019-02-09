@@ -1,11 +1,11 @@
 package garden;
 
 public class Plant {
-    String color;
-    double water;
-    boolean isWater;
+     String color;
+     double water;
+     boolean isWater;
     String typeOfPlant;
-    int waterAmount;
+     int waterAmount;
 
     public Plant(String color, int waterAmount) {
         this.color = color;
@@ -15,12 +15,17 @@ public class Plant {
 
 
     public void checkWater() {
-        if(water < waterAmount){
+        if (water < waterAmount) {
             isWater = true;
             System.out.println("The " + color + " " + typeOfPlant + " needs water!");
-        } else{
+        } else {
             isWater = false;
             System.out.println("The " + color + " " + typeOfPlant + " does not need water!");
         }
     }
+
+    public String getColor() {
+        return color;
+    }
+
 }

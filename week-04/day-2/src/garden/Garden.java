@@ -24,8 +24,7 @@ public class Garden {
 
 
     public static void showGarden(List<Plant> name) {
-        for (Plant plant : name
-        ) {
+        for (Plant plant : name) {
             plant.checkWater();
         }
         System.out.println("");
@@ -37,16 +36,13 @@ public class Garden {
 
 
         for (int i = 0; i < 2; i++) {
-            for (Plant plant : name
-            ) {
+            for (Plant plant : name) {
                 if (plant.isWater) {
                     plantsToWater.add(plant);
                 }
             }
 
-
-            for (Plant plant : plantsToWater
-            ) {
+            for (Plant plant : plantsToWater) {
                 if (plant.typeOfPlant.equals("Flower"))
                     plant.water += 0.75 * (pourWater/plantsToWater.size());
                 else {
