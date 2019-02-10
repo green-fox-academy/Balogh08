@@ -20,5 +20,9 @@ public class Zoo {
         System.out.println("A " + reptile.getName() + " lives for " + reptile.age + " years.");
         System.out.println("A " + mammal.getName() + "  lives for " + mammal.age + " years.");
         System.out.println("A " + bird.getName() + " lives for " + bird.age + " years.");
+
+        bird.fly();
+        bird.land();
+        bird.takeOff();
     }
 }
