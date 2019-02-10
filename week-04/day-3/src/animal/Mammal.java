@@ -2,8 +2,8 @@ package animal;
 
 public class Mammal extends Animal {
 
-    public Mammal (String name) {
-        super(name);
+    public Mammal (String name, int age) {
+        super(name, age);
     }
 
     @Override
@@ -16,8 +16,4 @@ public class Mammal extends Animal {
         return "pushing miniature versions out";
     }
 
-    @Override
-    public int getAge() {
-        return 15;
-    }
 }

@@ -1,8 +1,8 @@
 package animal;
 
 public abstract class BreedsByEggs extends Animal {
-    public BreedsByEggs(String name) {
-        super(name);
+    public BreedsByEggs(String name, int age) {
+        super(name, age);
     }
 
     @Override

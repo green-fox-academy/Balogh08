@@ -3,11 +3,7 @@ package animal;
 public class Bird extends BreedsByEggs {
 
 
-    public Bird(String name) {
-        super(name);
-    }
-    @Override
-    public int getAge() {
-        return 5;
+    public Bird(String name, int age) {
+        super(name, age);
     }
 }
