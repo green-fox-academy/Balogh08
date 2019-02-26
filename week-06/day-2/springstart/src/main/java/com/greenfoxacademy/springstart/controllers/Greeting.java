@@ -5,13 +5,14 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Greeting {
     private long id;
     private String content;
+    private static AtomicLong counter = new AtomicLong();
 
-    public Greeting(long id, String content) {
-        this.id = id;
+    public Greeting( String content) {
+        id = counter.incrementAndGet();
         this.content = content;
     }
 
-    public final long getId() {
+    public long getId() {
         return id;
     }
 
