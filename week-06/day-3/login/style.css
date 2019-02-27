@@ -1,0 +1,70 @@
+body {
+    background-color: lightgrey;
+    text-align: center;
+    font-family: Arial ;
+    margin: 40px auto;
+}
+
+form {
+    background-color: white;
+    margin: auto;
+    padding:20px 50px;
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+}
+
+legend, label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+legend {
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: x-small;
+}
+input {
+    display: block;
+    padding: 0px 10px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.form-submit-button {
+    background-color: black;
+}
+
+input[type='submit'] {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+input[type='text']:focus{
+    border-color: greenyellow;
+}
+
+input[type='password'] {
+    background: url(eye.png) no-repeat;
+    background-position: right;
+    background-size: 8%;
+}
+
+img.small{
+    height: 20px;
+    padding-left: 170px;
+}
+
+p {
+    font-size: x-small;
+    text-align: right;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}

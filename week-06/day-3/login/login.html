@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="description" content="Fancy table made in Greenfox">
+    <meta name="author" content="Botond Balogh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type = "text/javascript" src = "function.js" ></script>
+</head>
+<body>
+<form method="GET" action="http://google.com">
+    <legend>Account login</legend>
+    <label for="username">Username</label>
+    <input type="text" id="username" autofocus maxlength="20" placeholder="name">
+    <label for="password">Password</label>
+    <input type="password" id="password" minlength="8" placeholder="password">
+    <img src="eye.png" class="small" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" />
+    <p><a href="#">Forgot your password?</a> </p>
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>
