@@ -1,0 +1,93 @@
+body {
+    background-color: lightgrey;
+    font-family: Arial;
+    margin: 50px auto;
+}
+
+form {
+    background-color: ghostwhite;
+    width: 70%;
+    margin: auto;
+    padding: 4%;
+    display: block;
+}
+
+thead tr th {
+    font-size: xx-large;
+    font-weight: lighter;
+    text-align: left;
+    padding-bottom: 5%;
+}
+
+tbody tr td.left {
+    width: 40%;
+}
+
+tbody tr td.middle {
+    background: url("or.png") no-repeat;
+    background-position: center;
+    background-size: 50%;
+    width: 20%;
+}
+
+tbody tr td.right{
+    width: 40%;
+}
+
+td.left input {
+    background-color: ghostwhite;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: lightgrey 2px solid;
+    border-left: 0;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    font-size: large;
+    margin-bottom: 26px;
+    width: 100%;
+}
+
+td.left input:focus {
+    outline: none;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: green 2px solid;
+    border-left: 0;
+}
+
+td.right input{
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    padding: 16px;
+    width: 100%;
+    border-radius: 4px;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+td.right input.facebook {
+    background-color: darkblue;
+}
+
+td.right input.twitter {
+    background-color: cornflowerblue;
+}
+
+td.right input.google {
+    background-color: orangered;
+}
+
+td.right input:focus {
+    outline: none;
+    border: black solid 2px;
+}
+
+input[type='submit'] {
+    background-color: darkseagreen;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    border-radius: 4px;
+    padding: 14px 28px;
+}

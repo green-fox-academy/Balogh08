@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Form</title>
+    <meta name="description" content="Sign up from">
+    <meta name="author" content="Botond Balogh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form method="POST" action=https://newsletter-ws.herokuapp.com/register>
+        <table>
+            <thead>
+            <tr>
+                <th>Sign Up</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="left">
+                    <input type="text" name="name" placeholder="Username" autofocus minlength="6" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="password" name="password" placeholder="Password" minlength="8" required>
+                    <input type="password" name="passwordConfirmation" placeholder="Retype password" minlength="8" required>
+                </td>
+                <td class="middle"></td>
+                <td class="right">
+                    <a href="https://www.facebook.com/" target="_blank"><input type="button" name="facebook" value="Log in with facebook" class="facebook"></a>
+                    <a href="https://www.twitter.com/" target="_blank"><input type="button" name="twitter" value="Log in with Twitter" class="twitter"></a>
+                    <a href="https://plus.google.com/discover" target="_blank"><input type="button" name="google" value="Log in with Google+" class="google"></a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="SIGN ME UP">
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+</html>
