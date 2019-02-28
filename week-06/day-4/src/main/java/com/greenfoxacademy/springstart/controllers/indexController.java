@@ -45,5 +45,11 @@ public class indexController {
         return "dataOfItem";
     }
 
+    @GetMapping("/mostExpensive")
+    public String mostExpensive(Model model) {
+        model.addAttribute("items", listOfShopItems.mostExpensive());
+        return "dataOfItem";
+    }
+
 
 }
