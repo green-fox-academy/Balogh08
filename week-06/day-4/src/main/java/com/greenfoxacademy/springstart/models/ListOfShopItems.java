@@ -1,12 +1,8 @@
 package com.greenfoxacademy.springstart.models;
 
 import java.util.ArrayList;
-import java.util.DoubleSummaryStatistics;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
-
-import static java.lang.Math.round;
 
 public class ListOfShopItems {
     private List<ShopItem> shopItemList;
