@@ -38,3 +38,29 @@ nav input {
 nav input:hover {
     border: grey 2px solid;
 }
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+    font-size: x-large;
+    padding: 1rem;
+    background-color: deepskyblue;
+}
+
+td.firstCol {
+    font-size: large;
+    font-weight: bold;
+}
+
+td.secondCol {
+    font-size: medium;
+}
+
+td.lastCol {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}

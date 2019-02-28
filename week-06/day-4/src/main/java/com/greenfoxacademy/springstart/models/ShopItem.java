@@ -3,10 +3,10 @@ package com.greenfoxacademy.springstart.models;
 public class ShopItem {
     private String name;
     private String description;
-    private String price;
+    private long price;
     private int quantity;
 
-    public ShopItem(String name, String description, String price, int quantity) {
+    public ShopItem(String name, String description, long price, int quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,7 +21,7 @@ public class ShopItem {
         return description;
     }
 
-    public String getPrice() {
+    public long getPrice() {
         return price;
     }
 

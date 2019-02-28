@@ -15,7 +15,7 @@ public class indexController {
     }
 
     @RequestMapping("/index")
-    public String webshop(Model model) {
+    public String allItems(Model model) {
         model.addAttribute("items", listOfShopItems.getListOfShopItems());
     return "index";
     }

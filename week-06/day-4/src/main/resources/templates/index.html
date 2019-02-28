@@ -21,12 +21,22 @@
 </nav>
 
 <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
     <tr th:each="item : ${items}">
-        <td th:text="${item.getName()}"></td>
-        <td th:text="${item.getDescription()}"></td>
-        <td th:text="${item.getPrice()}"></td>
-        <td th:text="${item.getQuantity()}"></td>
+        <td class="firstCol" th:text="${item.getName()}"></td>
+        <td class="secondCol" th:text="${item.getDescription()}"></td>
+        <td class="lastCol" th:text="${item.getPrice() + ' Ft'}"></td>
+        <td class="lastCol" th:text="${item.getQuantity()}"></td>
     </tr>
+    </tbody>
 </table>
 </body>
 </html>
