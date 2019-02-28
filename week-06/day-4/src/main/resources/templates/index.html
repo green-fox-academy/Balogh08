@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -19,5 +19,14 @@
     <input type="button" name="average" value="AVERAGE STOCK">
     <input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE">
 </nav>
+
+<table>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()}"></td>
+        <td th:text="${item.getQuantity()}"></td>
+    </tr>
+</table>
 </body>
 </html>
