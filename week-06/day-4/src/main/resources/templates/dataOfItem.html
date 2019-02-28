@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -13,30 +22,13 @@
     <hr>
 </header>
 <nav>
-   <a href="/onlyAvailable"><input type="button" name="available" value="ONLINE AVAILABLE"></a>
+    <a href="/onlyAvailable"><input type="button" name="available" value="ONLINE AVAILABLE"></a>
     <a href="/cheapestFirst"><input type="button" name="cheapest" value="CHEAPEST FIRST"></a>
     <a href="/containsNike"><input type="button" name="nike" value="CONTAINS NIKE"></a>
     <a href="/averageStock"><input type="button" name="average" value="AVERAGE STOCK"></a>
     <input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE">
 </nav>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Quantity</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr th:each="item : ${items}">
-        <td class="firstCol" th:text="${item.getName()}"></td>
-        <td class="secondCol" th:text="${item.getDescription()}"></td>
-        <td class="lastCol" th:text="${item.getPrice() + ' Ft'}"></td>
-        <td class="lastCol" th:text="${item.getQuantity()}"></td>
-    </tr>
-    </tbody>
-</table>
+<p class="average" th:text="${items}"></p>
 </body>
 </html>

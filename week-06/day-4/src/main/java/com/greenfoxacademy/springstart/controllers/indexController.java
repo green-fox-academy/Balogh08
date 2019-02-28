@@ -18,13 +18,31 @@ public class indexController {
     @GetMapping("/allItems")
     public String allItems(Model model) {
         model.addAttribute("items", listOfShopItems.getListOfShopItems());
-    return "index";
+        return "index";
     }
 
     @GetMapping("/onlyAvailable")
     public String availableItems(Model model) {
         model.addAttribute("items", listOfShopItems.sortOnlyAvailable());
         return "index";
+    }
+
+    @GetMapping("/cheapestFirst")
+    public String cheapestFirst(Model model) {
+        model.addAttribute("items", listOfShopItems.cheapestFirst());
+        return "index";
+    }
+
+    @GetMapping("/containsNike")
+    public String containsNike(Model model) {
+        model.addAttribute("items", listOfShopItems.containsNike());
+        return "index";
+    }
+
+    @GetMapping("/averageStock")
+    public String averageStock(Model model) {
+        model.addAttribute("items", listOfShopItems.averageStock());
+        return "dataOfItem";
     }
 
 

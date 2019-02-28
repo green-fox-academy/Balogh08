@@ -66,3 +66,8 @@ td.lastCol {
     font-weight: bold;
     text-align: center;
 }
+
+p.average {
+    font-size: x-large;
+    font-weight: bold;
+}
