@@ -5,17 +5,19 @@ body {
 }
 
 header {
-    color: deepskyblue;
-}
-
-header h1 {
-    margin: 0;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 header hr {
     color:deepskyblue;
     border-color: deepskyblue;
     margin: 0 0 10px 0;
+}
+
+header a {
+    color:deepskyblue;
+    text-decoration: none;
 }
 
 nav {

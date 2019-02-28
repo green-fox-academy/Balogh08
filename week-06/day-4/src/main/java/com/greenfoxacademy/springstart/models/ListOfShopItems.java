@@ -2,6 +2,7 @@ package com.greenfoxacademy.springstart.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListOfShopItems {
     private List<ShopItem> shopItemList;
@@ -25,5 +26,11 @@ public class ListOfShopItems {
 
     public List<ShopItem> getListOfShopItems() {
         return shopItemList;
+    }
+
+    public List<ShopItem> sortOnlyAvailable() {
+        return shopItemList.stream()
+                .filter(shopItem -> shopItem.getQuantity() > 0)
+                .collect(Collectors.toList());
     }
 }
