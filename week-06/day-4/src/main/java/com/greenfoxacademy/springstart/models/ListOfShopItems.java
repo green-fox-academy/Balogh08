@@ -63,4 +63,11 @@ public class ListOfShopItems {
                 .collect(Collectors.toList());
         return "Most expensive item: " + mostExpensive.get(0).getName();
     }
+
+    public List<ShopItem> searchBar() {
+        return shopItemList.stream()
+                .filter(shopItem -> shopItem.getName().toLowerCase().contains("nike")
+                    || shopItem.getDescription().toLowerCase().contains("nike"))
+                .collect(Collectors.toList());
+    }
 }

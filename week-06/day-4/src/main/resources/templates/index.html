@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -13,21 +13,26 @@
     <hr>
 </header>
 <nav>
-   <a href="/onlyAvailable"><input type="button" name="available" value="ONLINE AVAILABLE"></a>
+    <a href="/onlyAvailable"><input type="button" name="available" value="ONLINE AVAILABLE"></a>
     <a href="/cheapestFirst"><input type="button" name="cheapest" value="CHEAPEST FIRST"></a>
     <a href="/containsNike"><input type="button" name="nike" value="CONTAINS NIKE"></a>
     <a href="/averageStock"><input type="button" name="average" value="AVERAGE STOCK"></a>
     <a href="/mostExpensive"><input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE"></a>
 </nav>
-
+<form id="label" method="post" actrion="/search">
+    <label for="search">Search for:</label>
+    <br>
+    <input type="search" name="search" id="search" placeholder="...something like nike">
+    <input type="submit" value="Search">
+</form>
 <table>
     <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Quantity</th>
-        </tr>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
     </thead>
     <tbody>
     <tr th:each="item : ${items}">

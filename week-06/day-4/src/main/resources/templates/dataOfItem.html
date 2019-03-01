@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/myStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -26,9 +26,11 @@
     <a href="/cheapestFirst"><input type="button" name="cheapest" value="CHEAPEST FIRST"></a>
     <a href="/containsNike"><input type="button" name="nike" value="CONTAINS NIKE"></a>
     <a href="/averageStock"><input type="button" name="average" value="AVERAGE STOCK"></a>
-    <input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE">
+    <a href="/mostExpensive"><input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE"></a>
 </nav>
-
+<form method="post" actrion="/search">
+    <input type="text" name="search" placeholder="...something like nike">
+</form>
 <p class="average" th:text="${items}"></p>
 </body>
 </html>

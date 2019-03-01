@@ -71,3 +71,29 @@ p.average {
     font-size: x-large;
     font-weight: bold;
 }
+
+#label {
+    color: orangered;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+form {
+    margin: 20px 0;
+}
+
+form input{
+    border-color: orangered;
+    font-size: x-large;
+}
+
+form input:focus {
+    outline: none;
+    border: orangered 4px solid;
+}
+
+input[type=submit] {
+    border-color: orangered;
+    background-color: orangered;
+    color: white;
+}
