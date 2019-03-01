@@ -4,6 +4,8 @@ import com.greenfoxacademy.springstart.models.ListOfShopItems;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class indexController {
@@ -50,5 +52,9 @@ public class indexController {
         return "dataOfItem";
     }
 
-
+    @PostMapping("/search")
+    public String search(Model model, @RequestParam("keyword") String keyword) {
+        model.addAttribute("items", listOfShopItems.searchBar(keyword));
+        return "index";
+    }
 }

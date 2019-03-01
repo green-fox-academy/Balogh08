@@ -28,8 +28,11 @@
     <a href="/averageStock"><input type="button" name="average" value="AVERAGE STOCK"></a>
     <a href="/mostExpensive"><input type="button" name="expensive" value="MOST EXPENSIVE AVAILABLE"></a>
 </nav>
-<form method="post" actrion="/search">
-    <input type="text" name="search" placeholder="...something like nike">
+<form id="label" method="POST" action="/search">
+    <label for="search">Search for:</label>
+    <br>
+    <input type="search" name="keyword" id="search" placeholder="...something like nike">
+    <input type="submit" value="Search">
 </form>
 <p class="average" th:text="${items}"></p>
 </body>

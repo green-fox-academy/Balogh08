@@ -50,6 +50,7 @@ th {
     font-size: x-large;
     padding: 1rem;
     background-color: deepskyblue;
+    width: 25%;
 }
 
 td.firstCol {

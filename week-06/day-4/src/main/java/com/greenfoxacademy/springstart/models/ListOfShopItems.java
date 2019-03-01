@@ -64,10 +64,10 @@ public class ListOfShopItems {
         return "Most expensive item: " + mostExpensive.get(0).getName();
     }
 
-    public List<ShopItem> searchBar() {
+    public List<ShopItem> searchBar(String keyword) {
         return shopItemList.stream()
-                .filter(shopItem -> shopItem.getName().toLowerCase().contains("nike")
-                    || shopItem.getDescription().toLowerCase().contains("nike"))
+                .filter(shopItem -> shopItem.getName().toLowerCase().contains(keyword.toLowerCase())
+                    || shopItem.getDescription().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }
