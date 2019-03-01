@@ -1,21 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 <div th:insert="fragment/navbar :: header"></div>
-<form id="label" method="POST" action="/search">
-    <label for="search">Search for:</label>
-    <br>
-    <input type="search" name="keyword" id="search" placeholder="...something like nike">
-    <input type="submit" value="Search">
-</form>
-<p class="average" th:text="${items}"></p>
 </body>
 </html>

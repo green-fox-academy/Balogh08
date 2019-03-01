@@ -57,4 +57,10 @@ public class indexController {
         model.addAttribute("items", listOfShopItems.searchBar(keyword));
         return "index";
     }
+
+    @GetMapping("/addItem")
+    public String addItem(Model model) {
+        model.addAttribute("items", listOfShopItems.mostExpensive());
+        return "additem";
+    }
 }

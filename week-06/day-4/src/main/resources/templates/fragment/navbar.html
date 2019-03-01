@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/myStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="header">
+    <header>
+        <a href="/allItems">My Shop</a>
+        <hr>
+    </header>
+    <nav>
+        <a href="/onlyAvailable" target="_top"><input type="button" name="available" value="ONLINE AVAILABLE"></a>
+        <a href="/cheapestFirst" target="_top"><input type="button" name="cheapest" value="CHEAPEST FIRST"></a>
+        <a href="/containsNike" target="_top"><input type="button" name="nike" value="CONTAINS NIKE"></a>
+        <a href="/averageStock" target="_top"><input type="button" name="average" value="AVERAGE STOCK"></a>
+        <a href="/mostExpensive" target="_top"><input type="button" name="expensive"
+                                                      value="MOST EXPENSIVE AVAILABLE"></a>
+        <a href="/addItem" target="_top"><input type="button" name="add" value="ADD ITEM"></a>
+    </nav>
+</div>
+</body>
+</html>
