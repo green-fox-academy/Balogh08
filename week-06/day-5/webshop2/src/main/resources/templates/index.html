@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div th:insert="header :: header">
+</div>
+
+<div th:insert="header :: add">
+</div>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th class="name">Name</th>
+            <th class="description">Description</th>
+            <th class="price">Price</th>
+            <th class="quantity">Quantity of stock</th>
+        </tr>
+        </thead>
+        <tbody id="list">
+        <tr th:each="item : ${items}">
+            <td th:text="${item.getName()}"></td>
+            <td class="medium" th:text="${item.getDescription()}"></td>
+            <td class="middle" th:text="'$ ' + ${item.getPrice()}"></td>
+            <td class="middle" th:text="${item.getQty()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

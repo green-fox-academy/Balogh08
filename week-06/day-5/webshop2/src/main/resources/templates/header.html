@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:fragment="header">
+    <header>
+        <p><a href="/allProducts" alt="All products of shop" class="header">My Shop</a></p>
+        <hr>
+    </header>
+    <nav>
+        <ul id="menu">
+            <li><a href="/available">ONLY AVAILABLE</a></li>
+            <li><a href="/cheapest">CHEAPEST FIRST</a></li>
+            <li><a href="/nike">CONTAINS NIKE</a></li>
+            <li><a href="/average">AVERAGE STOCK</a></li>
+            <li><a href="/mostExpensive">MOST EXPENSIVE AVAILABLE</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div th:fragment="add">
+    <section id="add">
+        <form method="post" action="allProducts">
+            <legend>Add product to list!</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Example: Nike pro shoes" required>
+                    </td>
+                    <td>
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description"
+                               placeholder="Example: Use for indoor football" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" placeholder="Example: 10" min="0" required>
+                    </td>
+                    <td>
+                        <label for="qty">Quantity of stock</label>
+                        <input type="number" name="qty" id="qty" placeholder="Example: 4" min="0" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add product">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section id="search">
+        <form method="get" action="/search">
+            <label for="searchfield">Search:</label>
+            <input type="search" name="search" id="searchfield" placeholder="...something like Nike">
+            <input type="submit" value="Search">
+        </form>
+    </section>
+</div>
+</body>
+</html>

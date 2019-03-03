@@ -1,0 +1,160 @@
+body {
+    background-color: ghostwhite;
+    margin: 5%;
+}
+
+header p {
+
+    margin: 0;
+    padding: 0;
+}
+
+a.header{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: xx-large;
+    color: deepskyblue;
+}
+
+header hr {
+    border-color: deepskyblue;
+    background-color: deepskyblue;
+    margin: 0;
+}
+
+nav ul#menu {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav ul#menu li {
+    display: block;
+    flex: auto;
+    list-style-type: none;
+
+}
+
+nav ul#menu li a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: tomato;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+section#add form {
+    width: 100%;
+}
+
+section#add form table{
+    width: 100%;
+}
+
+section#add form table td{
+    width: 50%;
+    text-align: left;
+}
+
+section#add form label{
+    display: block;
+    margin: 1% 0%;
+    color: tomato;
+    font-weight: bold;
+    font-size: large;
+}
+
+section#add form input{
+    width: 80%;
+}
+
+section#add form input[type='submit'] {
+    width: 10%;
+
+}
+
+input {
+    color: black;
+    margin-bottom: 2%;
+    border-color: tomato;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: medium;
+}
+
+input[type='submit'] {
+    background-color: tomato;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+
+section table {
+    width: 100%;
+}
+
+section table thead th{
+    background-color: deepskyblue;
+    color: black;
+    padding: 1rem;
+    width: 25%;    font-weight: bold;
+    font-size: x-large;
+}
+
+th.name {
+    width: 15%;
+}
+
+th.description {
+    width: 45%
+}
+
+th.price {
+    width: 25%;
+}
+
+th.quantity {
+    width: 15%;
+}
+
+tbody#list tr {
+    color: black;
+    font-size: x-large;
+    background-color: antiquewhite;
+}
+
+tbody#list tr td.middle {
+    text-align: center;
+    font-weight: bold;
+}
+
+tbody#list tr td.medium {
+    font-size: medium;
+}
+
+tbody#list tr:hover {
+    background-color: cornflowerblue;
+}
+
+section#search label {
+    display: block;
+    margin: 1% 0%;
+    color: tomato;
+    font-weight: bold;
+    font-size: large;
+}
+
+section#search input[type='search'] {
+    width: 70%;
+}
+
+section#search input[type='submit'] {
+    width: 20%;
+}
+
+
