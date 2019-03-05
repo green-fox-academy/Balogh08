@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<table>
+    <tr th:each="account : ${accounts}" th:class="${account.isKing()} ? king : ''">
+        <td th:text="|Name of owner: ${account.name} , balance of account: ${#numbers.formatDecimal(account.balance, 1, 'NONE', 2, 'POINT')}, type of owner: ${account.animalType}, its index is ${account.getId()}, other solution says ${accountStat.index}'.' Is he a king':' ${account.isKing()} |"></td>
+    </tr>
+</table>
+</body>
+</html>
