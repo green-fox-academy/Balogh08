@@ -4,6 +4,8 @@ import com.bankofsimba.simba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,20 @@ public class DefaultController {
 
     @GetMapping("/accounts")
     public String getAccounts(Model model) {
+        model.addAttribute("accounts", bankAccounts);
+        return "accounts";
+    }
+
+    @PostMapping("/addGold")
+    public String sendGold(Model model, @RequestParam("add") int index) {
+    bankAccounts.get(index).raiseBalance();
+model.addAttribute("accounts", bankAccounts);
+        return "accounts";
+    }
+
+    @PostMapping("/accounts")
+    public String addAccount(Model model, @RequestParam("name") String name, @RequestParam("balance") int balance, @RequestParam("type") String type, @RequestParam("isGoodGuy") boolean isGood) {
+        bankAccounts.add(new BankAccount(name, balance, type, isGood));
         model.addAttribute("accounts", bankAccounts);
         return "accounts";
     }

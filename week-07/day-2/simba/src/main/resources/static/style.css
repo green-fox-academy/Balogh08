@@ -1,4 +1,26 @@
+body {
+    margin: 5%;
+    padding: 0;
+}
+
 
 .king {
-    color: gold;
+    color: green;
+}
+table {
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+table td, th {
+    border: solid 2px black;
+    padding: 10px;
+}
+
+table tr:nth-child(2n) {
+    background-color: lightgrey;
+}
+
+table th {
+    background-color: grey;
+    color: white;
 }

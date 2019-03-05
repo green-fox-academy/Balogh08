@@ -14,7 +14,8 @@
         <th>Index(1)</th>
         <th>Index(2)</th>
         <th>King</th>
-        <th>Good/Bad</th>
+        <th>Good/Bad (Switch)</th>
+        <th>Good/Bad (If/Unless)</th>
     </tr>
     <tr th:each="account : ${accounts}" th:class="${account.isKing()} ? king : ''">
         <td th:text="${account.name}"></td>
@@ -25,9 +26,32 @@
         <td th:text="${account.isKing()}"></td>
         <td th:switch="${account.isGoodGuy()}">
             <span th:case="true">Good guy</span>
-            <span th:case="false">Bad guy</span>,
+            <span th:case="false">Bad guy</span>
+        </td>
+        <td>
+            <span th:if="${account.isGoodGuy()}">Good guy</span>
+            <span th:unless="${account.isGoodGuy()}">Bad guy</span>
         </td>
     </tr>
 </table>
+<br>
+<form method="post" action="addGold">
+    <select name="add">
+        <option th:each="account : ${accounts}" th:text="${account.getName()}" th:value="${account.getId()}"></option>
+    </select>
+    <input type="submit" value="Send Gold">
+</form>
+
+<form method="post" action="accounts">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Example: Simba" required>
+    <label for="balance">Balance</label>
+    <input type="number" id="balance" name="balance" placeholder="Example: 1000" required>
+    <label for="type">Type</label>
+    <input type="text" id="type" name="type" placeholder="Example: lion" required>
+    <label for="isGoodGuy">Good guy</label>
+    <input type="text" id="isGoodGuy" name="isGoodGuy" placeholder="Example: true" required>
+    <input type="submit" value="Add account">
+</form>
 </body>
 </html>

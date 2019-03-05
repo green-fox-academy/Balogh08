@@ -45,4 +45,12 @@ public class BankAccount {
     public boolean isGoodGuy() {
         return isGoodGuy;
     }
+
+    public void raiseBalance() {
+        if (isKing) {
+            this.balance += 100;
+        } else {
+            this.balance += 10;
+        }
+    }
 }
