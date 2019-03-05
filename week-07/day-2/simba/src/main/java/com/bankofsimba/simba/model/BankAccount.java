@@ -7,12 +7,14 @@ public class BankAccount {
     private static int index = 0;
     private int id;
     private boolean isKing;
+    private boolean isGoodGuy;
 
-    public BankAccount(String name, double balance, String animalType) {
+    public BankAccount(String name, double balance, String animalType, boolean isGoodGuy) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.id = index++;
+        this.isGoodGuy = isGoodGuy;
         isKing = false;
     }
 
@@ -38,5 +40,9 @@ public class BankAccount {
 
     public void setKing() {
         isKing = true;
+    }
+
+    public boolean isGoodGuy() {
+        return isGoodGuy;
     }
 }

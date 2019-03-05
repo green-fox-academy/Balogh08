@@ -14,11 +14,11 @@ public class DefaultController {
     private List<BankAccount> bankAccounts = new ArrayList<>();
 
     public DefaultController() {
-        bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
-        bankAccounts.add(new BankAccount("Mufasa", 20000, "monkey"));
-        bankAccounts.add(new BankAccount("Timon", 50, "something"));
-        bankAccounts.add(new BankAccount("Pumba", 100, "pig"));
-        bankAccounts.add(new BankAccount("Boti", 5000, "human"));
+        bankAccounts.add(new BankAccount("Simba", 2000, "lion", true));
+        bankAccounts.add(new BankAccount("Mufasa", 20000, "monkey", true));
+        bankAccounts.add(new BankAccount("Timon", 50, "something", false));
+        bankAccounts.add(new BankAccount("Pumba", 100, "pig", false));
+        bankAccounts.add(new BankAccount("Boti", 5000, "human", true));
 
         bankAccounts.get(4).setKing();
 

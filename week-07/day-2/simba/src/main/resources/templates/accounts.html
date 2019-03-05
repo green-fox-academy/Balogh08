@@ -7,8 +7,26 @@
 </head>
 <body>
 <table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>Index(1)</th>
+        <th>Index(2)</th>
+        <th>King</th>
+        <th>Good/Bad</th>
+    </tr>
     <tr th:each="account : ${accounts}" th:class="${account.isKing()} ? king : ''">
-        <td th:text="|Name of owner: ${account.name} , balance of account: ${#numbers.formatDecimal(account.balance, 1, 'NONE', 2, 'POINT')}, type of owner: ${account.animalType}, its index is ${account.getId()}, other solution says ${accountStat.index}'.' Is he a king':' ${account.isKing()} |"></td>
+        <td th:text="${account.name}"></td>
+        <td th:text="${#numbers.formatDecimal(account.balance, 1, 'NONE', 2, 'POINT')}"></td>
+        <td th:text="${account.animalType}"></td>
+        <td th:text="${account.getId()}"></td>
+        <td th:text="${accountStat.index}"></td>
+        <td th:text="${account.isKing()}"></td>
+        <td th:switch="${account.isGoodGuy()}">
+            <span th:case="true">Good guy</span>
+            <span th:case="false">Bad guy</span>,
+        </td>
     </tr>
 </table>
 </body>
