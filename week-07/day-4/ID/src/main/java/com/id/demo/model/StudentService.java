@@ -30,6 +30,6 @@ public class StudentService {
 
     public String addStudent(String student) {
         names.add(student);
-        return student;
+        return "<b>" + student + "</b>  has been added to student list!";
     }
 }
