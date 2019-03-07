@@ -31,4 +31,18 @@ public class UtilityService {
             return "<span style=\"color:red\">" + email + "<span style=\"color:red\"> is not a valid email address!</span>";
         }
     }
+
+    public String caesar(String text, int number) {
+        if (number < 0) {
+            number = 26 + number;
+        }
+
+        String result = "";
+        for(int i = 0; i < text.length(); i++) {
+            int offset = Character.isUpperCase(text.charAt(i)) ? 'A' : 'a';
+            result += (char)(((int)text.charAt(i) + number - offset) % 26 + offset);
+        }
+        System.out.println(result);
+        return result;
+    }
 }

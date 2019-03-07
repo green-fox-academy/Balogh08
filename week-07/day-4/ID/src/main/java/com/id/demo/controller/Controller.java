@@ -30,4 +30,9 @@ public class Controller {
         return "useful";
     }
 
+    @GetMapping("/useful/code")
+    public String getCode(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
+        model.addAttribute("codedWord", utilityService.caesar(text, number));
+        return "useful";
+    }
 }
