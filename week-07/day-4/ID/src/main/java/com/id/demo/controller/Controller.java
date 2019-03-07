@@ -1,6 +1,7 @@
 package com.id.demo.controller;
 
 import com.id.demo.model.UtilityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Controller {
     private UtilityService utilityService;
 
-    public Controller() {
-        utilityService = new UtilityService();
+    @Autowired
+    public Controller(UtilityService utilityService) {
+        this.utilityService = utilityService;
     }
 
     @GetMapping("useful")
