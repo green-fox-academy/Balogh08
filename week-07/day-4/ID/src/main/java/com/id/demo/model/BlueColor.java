@@ -6,7 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Qualifier("blue")
 public class BlueColor implements MyColor{
+    private Printer printer;
+
+    public BlueColor(Printer printer) {
+        this.printer = printer;
+    }
+
+    @Override
     public void printColor() {
-        System.out.println("PRINTS IN: - BLUE");
+        printer.log("PRINTS IN: - BLUE");
     }
 }
