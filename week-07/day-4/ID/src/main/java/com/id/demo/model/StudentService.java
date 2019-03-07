@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class StudentService {
-    ArrayList<String> names;
+    private ArrayList<String> names;
 
     public StudentService() {
         names = new ArrayList<>();
@@ -31,5 +31,17 @@ public class StudentService {
     public String addStudent(String student) {
         names.add(student);
         return "<b>" + student + "</b>  has been added to student list!";
+    }
+
+    public String counter() {
+        return "Number of Students: " + names.size();
+    }
+
+    public String checkStudent(String student) {
+        if (names.contains(student)) {
+            return "<span style=\"color:green\">" + student + "</span> is in the list";
+        } else {
+            return "<span style=\"color:red\">" + student + "</span> is NOT in the list";
+        }
     }
 }

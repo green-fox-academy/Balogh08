@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check list</title>
+</head>
+<body>
+<div th:replace="gfa::gfaList">
+</div>
+<form method="post" action="/gfa/check">
+    <label for="studentName">Add new student's name:</label>
+    <input type="text" id="studentName" name="name" placeholder="Example: Sándor">
+    <input type="submit" value="Check student">
+</form>
+<br>
+<br>
+<span th:utext="${student}"></span>
+</body>
+</html>

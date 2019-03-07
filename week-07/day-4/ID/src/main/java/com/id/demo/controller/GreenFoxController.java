@@ -19,7 +19,8 @@ public class GreenFoxController {
     }
 
     @GetMapping("/gfa")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("students", studentService.counter());
         return "gfa";
     }
 
@@ -38,5 +39,16 @@ public class GreenFoxController {
     public String addStudent(Model model, @RequestParam("name") String name) {
         model.addAttribute("student", studentService.addStudent(name));
         return "add";
+    }
+
+    @GetMapping("/gfa/check")
+    public String getCheck() {
+        return "check";
+    }
+
+    @PostMapping("/gfa/check")
+    public String checkStudent(Model model, @RequestParam("name") String name) {
+        model.addAttribute("student", studentService.checkStudent(name));
+        return "check";
     }
 }

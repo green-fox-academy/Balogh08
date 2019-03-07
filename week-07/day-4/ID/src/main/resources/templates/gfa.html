@@ -5,12 +5,15 @@
     <title>GFA</title>
 </head>
 <body>
+<header>
+    <span th:text="${students}"></span>
+</header>
 <div th:fragment="gfaList">
     <li th:fragment="gfaList">
         <ul><a href="/gfa">Home</a></ul>
         <ul><a href="/gfa/list">List</a></ul>
         <ul><a href="/gfa/add">Add student to list</a></ul>
-        <ul><a href="#"></a></ul>
+        <ul><a href="/gfa/check">Check name in list</a></ul>
         <ul><a href="#"></a></ul>
     </li>
 </div>

@@ -28,7 +28,7 @@ public class UtilityService {
         if (email.contains("@") && email.contains(".")) {
             return "<span style=\"color:green\">" + email +  " is a valid email address!</span>";
         } else {
-            return "<span style=\"color:red\">" + email + "<span style=\"color:red\"> is not a valid email address!</span>";
+            return "<span style=\"color:red\">" + email + " is not a valid email address!</span>";
         }
     }
 
