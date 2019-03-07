@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @org.springframework.stereotype.Controller
-public class Controller {
+public class UtilityController {
     private UtilityService utilityService;
 
     @Autowired
-    public Controller(UtilityService utilityService) {
+    public UtilityController(UtilityService utilityService) {
         this.utilityService = utilityService;
     }
 
