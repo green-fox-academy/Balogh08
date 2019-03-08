@@ -21,11 +21,6 @@ public class Foxes {
         return foxes;
     }
 
-    public boolean containsName(String name) {
-        return foxes.stream()
-                .map(fox -> fox.getName()).anyMatch(fox -> fox.equalsIgnoreCase(name));
-    }
-
     public Fox getFoxWithName(String name) {
         return foxes.stream()
                 .filter(fox -> fox.getName().equalsIgnoreCase(name)).findFirst().get();

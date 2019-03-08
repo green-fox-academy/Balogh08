@@ -46,24 +46,9 @@ public class MainController {
     public String getNutrition() {
         return "nutrition";
     }
+
+    @GetMapping("/trick")
+    public String getTrick() {
+        return "trick";
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-redirect:/?name=" + name*/
-//        if (name != null && foxes.containsName(name))
-//                foxes.addFox(model, foxes.getFoxWithName(name));

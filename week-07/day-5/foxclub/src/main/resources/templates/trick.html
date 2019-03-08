@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trick Center</title>
+</head>
+<body>
+<header th:replace="index::header"></header>
+<section>
+    <form method="post" action="/trick">
+        <label for="trick">Trick</label>
+        <select name="trick" id="trick">
+            <option value="Hindu">Speak Hindu</option>
+            <option value="drawFlower">Draw flower</option>
+            <option value="jump">Jump</option>
+            <option value="hide">Hide</option>
+            <option value="run">Run</option>
+        </select>
+        <input type="submit" value="Learn">
+    </form>
+</section>
+</body>
+</html>
