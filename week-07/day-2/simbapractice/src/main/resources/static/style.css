@@ -1,0 +1,22 @@
+body {
+    margin: 2% 5%;
+    background-color: antiquewhite;
+}
+
+table {
+    background-color: ghostwhite;
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+th {
+    background-color: grey;
+}
+
+th, td {
+    border: black 2px solid;
+    padding: 5px;
+}
+
+.gold {
+    color: gold;
+}

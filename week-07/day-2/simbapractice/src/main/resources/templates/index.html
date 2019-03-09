@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+    <link rel="stylesheet" type="text/css" th:href="style.css">
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>Index</th>
+        <th>King</th>
+        <th>Good/Bad</th>
+        <th>Good/Bad by switch</th>
+    </tr>
+    <tr th:each="account : ${accounts.getAccounts()}" th:class="${account.isKing()} == true ? gold">
+        <td th:text="${account.getName()}"></td>
+        <td th:text="${#numbers.formatDecimal(account.getBalance(), 0, 'NONE', 2, 'POINT')} + ' ZEBRA'"></td>
+        <td th:text="${account.getAnimalType()}"></td>
+        <td th:text="${accountStat.index}"></td>
+        <td th:text="${account.isKing()}"></td>
+        <td th:text="${account.isGoodGuy()} == true ? 'Good guy' : 'Bad guy'"></td>
+        <td th:switch="${account.isGoodGuy()}">
+            <span th:case="true">Good guy</span>
+            <span th:case="false">Bad guy</span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
