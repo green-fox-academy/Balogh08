@@ -30,4 +30,15 @@ public class Accounts {
     public List<BankAccount> getAccounts() {
         return accounts;
     }
+
+    public BankAccount getIndexAccount(int index) {
+        return accounts.get(index);
+    }
+
+    public void addAccount(String name, String type, boolean good, boolean king) {
+        BankAccount newAccount = new BankAccount(name, type);
+        newAccount.setGoodGuy(good);
+        newAccount.setKing(king);
+        accounts.add(newAccount);
+    }
 }

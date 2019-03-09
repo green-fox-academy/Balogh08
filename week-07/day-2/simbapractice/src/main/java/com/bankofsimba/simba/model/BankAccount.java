@@ -15,6 +15,10 @@ public class BankAccount {
         goodGuy = true;
     }
 
+    public void addGold() {
+        this.balance += this.king ? 100 :10;
+    }
+
     public String getName() {
         return name;
     }

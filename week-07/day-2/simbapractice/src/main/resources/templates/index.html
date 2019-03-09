@@ -15,6 +15,7 @@
         <th>King</th>
         <th>Good/Bad</th>
         <th>Good/Bad by switch</th>
+        <th>Gold</th>
     </tr>
     <tr th:each="account : ${accounts.getAccounts()}" th:class="${account.isKing()} == true ? gold">
         <td th:text="${account.getName()}"></td>
@@ -27,7 +28,30 @@
             <span th:case="true">Good guy</span>
             <span th:case="false">Bad guy</span>
         </td>
+        <td>
+            <form method="post" action="/add">
+                <button type="submit" th:value="${accountStat.index}" name="index">Add zebra</button>
+            </form>
+        </td>
     </tr>
 </table>
+<form method="post" action="/new">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="type">Animal type</label>
+    <input type="text" id="type" name="type" required>
+    <label for="good">Good guy</label>
+    <input type="checkbox" id="good" name="good">
+    <label for="king">King</label>
+    <input type="checkbox" id="king" name="king">
+    <input type="submit" value="Create account">
+</form>
+
+<form method="post" action="/add2">
+    <select name="index">
+        <option th:each="account : ${accounts.getAccounts()}" th:text="${account.getName()}" th:value="${accountStat.index}"></option>
+        <input type="submit" value="Add zebra">
+    </select>
+</form>
 </body>
 </html>
