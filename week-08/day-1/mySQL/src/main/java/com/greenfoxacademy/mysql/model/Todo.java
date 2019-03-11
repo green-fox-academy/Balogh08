@@ -1,6 +1,4 @@
-package com.greenfoxacademy.todo.model;
-
-import org.springframework.stereotype.Service;
+package com.greenfoxacademy.mysql.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +24,12 @@ public class Todo {
         this.title = title;
         this.urgent = false;
         this.done = false;
+    }
+
+    public Todo(String title, boolean urgent, boolean done) {
+        this.title = title;
+        this.urgent = urgent;
+        this.done = done;
     }
 
     public long getId() {
