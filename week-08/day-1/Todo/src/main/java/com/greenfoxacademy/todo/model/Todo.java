@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Service
 @Entity
 public class Todo {
 
@@ -19,6 +18,8 @@ public class Todo {
     private boolean done;
 
     public Todo() {
+        this.urgent = false;
+        this.done = false;
     }
 
     public Todo(String title) {
