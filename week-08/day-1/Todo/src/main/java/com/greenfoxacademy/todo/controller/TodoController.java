@@ -22,6 +22,4 @@ public class TodoController {
         model.addAttribute("todos", todoRepository.findAll());
         return "todolist";
     }
-
-
 }
