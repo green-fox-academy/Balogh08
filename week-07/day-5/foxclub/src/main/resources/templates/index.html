@@ -7,9 +7,9 @@
 <body>
 <header th:fragment="header">
     <ul>
-        <li><a href="/" alt="Information about fox">Information</a></li>
-        <li><a href="/nutrition" alt="Nutrition available for foxes">Nutrition Store</a></li>
-        <li><a href="/trick" alt="Go to trick center">Go to trick center</a></li>
+        <li><a th:href="'/index/?name='+${name}" alt="Information about fox">Information</a></li>
+        <li><a th:href="'/nutrition/?name='+${name}" alt="Nutrition available for foxes">Nutrition Store</a></li>
+        <li><a th:href="'/trick/?name='+${name}" alt="Go to trick center">Go to trick center</a></li>
     </ul>
     <img src="greenfox.png" alt="Green Fox">
 </header>

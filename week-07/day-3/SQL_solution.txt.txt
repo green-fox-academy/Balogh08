@@ -1,0 +1,101 @@
+SQL Movie-Rating Query Exercises
+
+Q1:
+SELECT title FROM Movie
+    WHERE director LIKE "Steven Spielberg";
+
+Q2:
+SELECT year FROM movie, rating
+    WHERE movie.mID = rating.mID
+    AND (stars = 4 OR stars = 5)
+    GROUP BY movie.year
+    ORDER BY movie.year;
+
+Q3:
+SELECT title
+    FROM movie
+    LEFT JOIN rating
+    ON movie.mID = rating.mID
+    WHERE rating.mID IS NULL;
+
+Q4:
+SELECT name FROM reviewer
+    LEFT JOIN rating
+    ON reviewer.rID = rating.rID
+    WHERE rating.ratingDate IS NULL;
+
+Q5:
+SELECT reviewer.name, movie.title, rating.stars, rating.ratingDate FROM rating
+    INNER JOIN reviewer
+    ON reviewer.rID = rating.rID
+    INNER JOIN movie
+    ON movie.mID = rating.mID
+    ORDER BY reviewer.name, movie.title, rating.stars;
+
+SELECT reviewer.name, movie.title, stars FROM rating
+    INNER JOIN movie
+    ON movie.mID = rating.mID
+    INNER JOIN reviewer
+    ON reviewer.rID = rating.rID
+    ORDER BY reviewer.name, movie.title, rating.ratingDate
+    SELECT IF (reviewer.name;
+
+Q6:
+SELECT Reviewer.name, Movie.title
+    FROM Reviewer, Movie, (
+        SELECT R1.rID, R1.mID
+        FROM Rating R1, Rating R2
+        WHERE R1.rID=R2.rID 
+            AND R1.mID=R2.mID
+            AND R2.ratingDate>R1.ratingDate
+            AND R2.stars>R1.stars)
+            AS T
+    WHERE Reviewer.rID=T.rID and Movie.mID=T.mID
+
+Q7:
+SELECT movie.title, rating.stars FROM movie, rating
+    WHERE movie.mID = rating.mID 
+    GROUP BY movie.title
+    ORDER BY title;
+
+Q8:
+SELECT movie.title, max(rating.stars)-min(rating.stars) AS spread FROM movie, rating
+    WHERE movie.mID = rating.mID
+    GROUP BY rating.mID
+    ORDER BY spread DESC, title;
+
+Q9:
+SELECT MAX(a1)-MIN(a1) FROM
+(SELECT AVG(av1) AS a1 FROM
+(SELECT AVG(stars) AS av1 FROM rating AS r
+    INNER JOIN movie AS m
+    ON r.mID = m.mID
+    WHERE m.year < 1980
+    GROUP BY r.mID)
+UNION
+SELECT AVG(av2) AS a2 FROM
+(SELECT AVG(stars) AS av2 FROM  rating AS r
+    INNER JOIN movie AS m
+    ON r.mID = m.mID
+    WHERE m.year > 1980
+    GROUP BY r.mID));
+
+
+
+SQL Movie-Rating Query Exercises Extras
+
+Q1:
+SELECT DISTINCT reviewer.name FROM rating
+    INNER JOIN reviewer
+    ON rating.rID = reviewer.rID
+    INNER JOIN movie
+    ON rating.mID = movie.mID
+    WHERE movie.title LIKE "Gone with the Wind";
+
+Q2:
+SELECT reviewer.name, movie.title, rating.stars FROM rating
+    INNER JOIN reviewer
+    ON rating.rID = reviewer.rID
+    INNER JOIN movie
+    ON rating.mID = movie.mID
+    WHERE movie.director = reviewer.name;

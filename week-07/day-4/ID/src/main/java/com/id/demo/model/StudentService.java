@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class StudentService {
+public class StudentService implements ability {
     private ArrayList<String> names;
 
     public StudentService() {
@@ -24,7 +24,7 @@ public class StudentService {
         names.add(student);
     }
 
-    public ArrayList<String> getNames() {
+    public List<String> getNames() {
         return names;
     }
 

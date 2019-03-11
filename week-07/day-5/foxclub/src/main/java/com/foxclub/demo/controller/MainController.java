@@ -19,36 +19,60 @@ public class MainController {
         this.foxes = foxes;
     }
 
-    @GetMapping("/")
-    public String getIndex(@RequestParam(value = "name", required = false)String name, Model model) {
-//        model.addAttribute("name", name);
-        if (name != null) {
-            model.addAttribute("fox", foxes.getFoxWithName(name));
-        } else {
-            model.addAttribute("fox", new Fox(name));
-        }
+    @GetMapping("/index")
+    public String getIndex(String name, Model model) {
+        model.addAttribute("fox", foxes.getFoxWithName(name));
+        model.addAttribute("name", name);
         return "index";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String getLogin() {
         return "login";
     }
 
     @PostMapping("/login")
     public String postLogin(String name) {
-        Fox fox = new Fox(name);
-        foxes.addFox(fox);
-        return "redirect:/?name=" + name;
+        if (!name.equalsIgnoreCase("")) {
+            Fox fox = new Fox(name);
+            foxes.addFox(fox);
+        } else {
+            name = "Mr. Fox";
+            Fox fox = new Fox(name);
+            foxes.addFox(fox);
+        }
+        return "redirect:/index/?name=" + name;
     }
 
     @GetMapping("/nutrition")
-    public String getNutrition() {
+    public String getNutrition(Model model, @RequestParam(required = false) String name) {
+        model.addAttribute("name", name);
+        model.addAttribute("fox", foxes.getFoxWithName(name));
         return "nutrition";
     }
 
+    @PostMapping("/nutrition")
+    public String postNutrition(@RequestParam(value = "name")String name,@RequestParam(value = "food")String food, @RequestParam(value = "drink")String drink, Model model) {
+        foxes.getFoxWithName(name).setFood(food);
+        foxes.getFoxWithName(name).setDrink(drink);
+        model.addAttribute("food", foxes.getFoxWithName(name).getFood());
+        model.addAttribute("drink", foxes.getFoxWithName(name).getDrink());
+        return "redirect:/?name=" + name;
+    }
+
     @GetMapping("/trick")
-    public String getTrick() {
+    public String getTrick(Model model, @RequestParam(value = "name", required = false)String name) {
+        if (name != null) {
+            model.addAttribute("name", name);
+        } else {
+            model.addAttribute("name", foxes.getFoxWithName("Mr. Fox"));
+        }
         return "trick";
+    }
+
+    @PostMapping("/trick")
+    public String postTrick(String trick, String name) {
+        foxes.getFoxWithName(name).setTrick(trick);
+        return "redirect:/index/?name=" + name;
     }
 }

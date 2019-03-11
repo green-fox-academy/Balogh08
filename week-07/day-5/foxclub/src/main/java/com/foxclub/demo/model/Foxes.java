@@ -11,6 +11,8 @@ public class Foxes {
 
     public Foxes() {
         foxes = new ArrayList<>();
+        Fox fox = new Fox("Mr. Fox");
+        foxes.add(fox);
     }
 
     public void addFox(Fox fox) {
