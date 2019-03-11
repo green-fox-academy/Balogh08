@@ -20,11 +20,11 @@ public class MysqlApplication implements CommandLineRunner {
     }
 
     public void run(String...args) throws Exception {
-        todoRepository.deleteAll();
-        todoRepository.save(new Todo("daily task"));
-        todoRepository.save(new Todo("make the beds", true, false));
-        todoRepository.save(new Todo("do the washing up"));
-        todoRepository.save(new Todo("clean the bathroom and the kitchen", false, true));
-        todoRepository.save(new Todo("wipe all the surface with a cloth"));
+//        todoRepository.deleteAll();
+//        todoRepository.save(new Todo("daily task"));
+//        todoRepository.save(new Todo("make the beds", true, false));
+//        todoRepository.save(new Todo("do the washing up"));
+//        todoRepository.save(new Todo("clean the bathroom and the kitchen", false, true));
+//        todoRepository.save(new Todo("wipe all the surface with a cloth"));
     }
 }

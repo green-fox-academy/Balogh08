@@ -15,11 +15,16 @@
         <th>URGENT</th>
     </tr>
     <tr th:each="todo : ${todos}">
-    <td th:text="${todo.getId()}"></td>
-    <td th:text="${todo.title}"></td>
-    <td th:text="${todo.isDone()}"></td>
-    <td th:text="${todo.isUrgent()}"></td>
-    <td th:text="delete"></td>
+        <td th:text="${todo.getId()}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.isDone()}"></td>
+        <td th:text="${todo.isUrgent()}"></td>
+        <td>
+            <form action="#" th:action="@{'/todo/'+${todo.getId()}+'/delete'}" th:method="delete">
+                <input type="submit" value="DELETE">
+
+            </form>
+        </td>
     </tr>
 </table>
 </body>

@@ -5,11 +5,13 @@ import com.greenfoxacademy.mysql.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/todo")
 public class TodoController {
 
     private TodoService todoService;
@@ -19,20 +21,26 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @RequestMapping(value = {"/", "/list", "/todo"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"", "/list"}, method = RequestMethod.GET)
     public String list(Model model, @RequestParam(value = "isActive", required = false) boolean isActive) {
         model.addAttribute("todos", isActive ? todoService.listActive() : todoService.listAll());
         return "todolist";
     }
 
-    @RequestMapping(value = "/todo/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String getAdd() {
         return "add";
     }
 
-    @RequestMapping(value = "/todo/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String postAdd(String newToDo) {
         todoService.addToDo(newToDo);
+        return "redirect:/todo";
+    }
+
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("id") Long id) {
+        todoService.deleteTodo(id);
         return "redirect:/todo";
     }
 }
