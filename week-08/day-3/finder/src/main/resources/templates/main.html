@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Find out what's wrong</title>
+</head>
+<body>
+<h1>User Database</h1>
+<h2>Add a new User</h2>
+<form action="#" th:action="@{/user/app}" th:method="POST">
+
+    <p><label for="firstName">First Name:</label></p>
+    <p><input type="text" id="firstName" name="first"/></p>
+
+    <p><label for="lastName">Last Name:</label></p>
+    <p><input type="text" id="lastName" name="last"/></p>
+
+    <p><input type="submit" value="Submit" /></p>
+
+</form>
+<h2>Existing users</h2>
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    <!--<tr th:each="user : ${users}">-->
+        <!--<td th:text="${user.firstName}">Lacika</td>-->
+        <!--<td th:text="${user.lastName}">Kovács</td>-->
+    </tr>
+</table>
+</body>
+</html>
+
+
+
+<!--
+ th:object="${user}"
+th:field="*{firstName}"
+ th:field="*{lastName}"
+-->
