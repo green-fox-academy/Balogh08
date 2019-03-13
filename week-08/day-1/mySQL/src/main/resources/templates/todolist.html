@@ -7,6 +7,8 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
+<a th:href="@{/todo/add}" th:method="GET">Add to ToDo</a>
+
 <table>
     <tr>
         <th>ID</th>
@@ -22,8 +24,13 @@
         <td>
             <form action="#" th:action="@{'/todo/'+${todo.getId()}+'/delete'}" th:method="delete">
                 <input type="submit" value="DELETE">
-
             </form>
+        </td>
+        <td>
+        <a th:href="@{'/todo/'+${todo.getId()}+'/delete'}">DELETE</a>
+        </td>
+        <td>
+           <a th:href="@{'/todo/'+${todo.getId()}+'/edit'}">Edit</a>
         </td>
     </tr>
 </table>

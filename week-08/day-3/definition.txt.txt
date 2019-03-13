@@ -1,0 +1,41 @@
+ORM: javaból az objekteinket rámeppeljük egy adatbázisra és fordítva egy adatbázisból a recordokat rámeppeljük az objektekre
+JDC: Java Database Connection - letrehoz kapcsolatot az adatbázissal
+JPA: Java Persistence API, egy interface, magában nem mûködõ képes, standard módot add az adatbázis eléréshez. Annotaciok gyûjteménye
+Hibernate: JPA implementációja, saját annotációkat is használ a JPA-n kívûl
+CrudRepository: egy interface amit extendelünk, az alap abstract methodusok megvannak írva
+Dependency Incejtion: functionon belül nem hozunk létre új példányt, egy kész példányt kapunk
+Dependency Incejtion container: DI valósít meg @Autowire-el, Singleton példányt hoz létre
+CommandLine Runner: futtat/kiírunk valamit a program inditásakor
+
+application.properties:
+server.port=8001
+
+@OneToOne(cascade = CascadeType.PERSIST) -->ha még nincs a példány akkor mentsd le az adatbázisba
+@JoinColumn(name="pokemon_id")
+private Pokemon pokemon;  --> pokemasternek van egy pokemonja
+
+(long)1 = 1L;
+
+fetch = fetchtype.eager... (default értéke lazyfetch)  vagy a function fölé rakjuk az @Transactional, ami azt jelenti h plusz transakciót kell végre hajtani (pokemonnster.getpokemonName())
+getterbe ne hívjuk repositoryt
+
+sequence --> trackeli a számokat együtt
+identity --> auto increment táblánként
+
+@Temporal --> date tipusú fieldhez kell használni!!!
+
+SETTEREK GETTEREK kellenek
+@Query --> SQL lekérdezéseket írhatunk
+@Query("SELECT p FROM Pokemon p WHERE p.id=?1 AND p.name=?2")  "p" a sort jelenti
+Pokemon findMyFavoritePokemon(Lind id, String name);
+
+?1 = elsõ beérkezett paraméter
+?2 = második beérkezett paraméter
+
+@Query(value =
+nativeQuery = true)
+
+@NameQuery fel lehet sorolni az összes custom lekérdezést
+
+ALAP ELV:
+sose listázom le az összes recordot, limitelem vagy specifikálom, hogy mit kérem

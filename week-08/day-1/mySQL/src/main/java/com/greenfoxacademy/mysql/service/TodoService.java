@@ -32,7 +32,18 @@ public class TodoService {
         todoRepository.save(new Todo(toDo));
     }
 
-    public void deleteTodo(long id) {
+    public void deleteToDo(long id) {
         todoRepository.deleteById(id);
     }
+
+    public Todo getEditable(long id) {
+        return todoRepository.findById(id).orElseThrow(NullPointerException::new);
+    }
+
+//    public void editTodo(long id, String name) {
+//        Todo todo = new Todo(todoRepository.findById(id).toString());
+//        todo.
+//        todoRepository.findById(id);
+//        todoRepository.save(todo);
+//    }
 }
