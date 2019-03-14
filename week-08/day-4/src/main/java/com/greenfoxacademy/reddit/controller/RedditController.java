@@ -36,13 +36,13 @@ public class RedditController {
         return "redirect:/reddit";
     }
 
-    @RequestMapping(value = "/{id}/increase", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/increase", method = RequestMethod.POST)
     public String increaseLike(@PathVariable("id") Long id) {
         redditService.upVote(id);
         return "redirect:/reddit";
     }
 
-    @RequestMapping(value = "/{id}/decrease", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/decrease", method = RequestMethod.POST)
     public String decreaseLike(@PathVariable("id") Long id) {
         redditService.downVote(id);
         return "redirect:/reddit";

@@ -20,10 +20,14 @@
     <tr th:each="post:${posts}">
         <td th:text="${post.numberLike}"></td>
         <td>
-            <a th:href="@{'/reddit/' + ${post.id} + '/increase'}">+</a>
+            <form action="#" th:action="@{'/reddit/' + ${post.id} + '/increase'}" method="post">
+                <input type="submit" value="+">
+            </form>
         </td>
         <td>
-            <a th:href="@{'/reddit/' + ${post.id} + '/decrease'}">-</a>
+            <form action="#" th:action="@{'/reddit/' + ${post.id} + '/decrease'}" method="post">
+                <input type="submit" value="-">
+            </form>
         </td>
         <td th:text="${post.title}"></td>
         <td th:text="${post.date}"></td>
