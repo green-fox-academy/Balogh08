@@ -28,9 +28,14 @@ public class RedditService {
     }
 
     public void upVote(Long id) {
-        Post post;
-        post = redditRepository.findById(id).orElseThrow(NullPointerException::new);
+        Post post = redditRepository.findById(id).orElseThrow(NullPointerException::new);
         post.increaseLike();
+        redditRepository.save(post);
+    }
+
+    public  void downVote(Long id) {
+        Post post = redditRepository.findById(id).orElseThrow(NoClassDefFoundError::new);
+        post.decreaseLike();
         redditRepository.save(post);
     }
 }

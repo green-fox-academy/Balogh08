@@ -13,9 +13,11 @@
     <tr th:each="post:${posts}">
         <td th:text="${post.numberLike}"></td>
         <td>
-            <a th:href="@{'/reddit/' + ${post.getId()} + '/increase'}">+</a>
+            <a th:href="@{'/reddit/' + ${post.id} + '/increase'}">+</a>
         </td>
-        <td>-</td>
+        <td>
+            <a th:href="@{'/reddit/' + ${post.id} + '/decrease'}">-</a>
+        </td>
         <td th:text="${post.title}"></td>
     </tr>
 </table>

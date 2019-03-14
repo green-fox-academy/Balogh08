@@ -64,6 +64,8 @@ public class Post {
     }
 
     public void decreaseLike() {
-        numberLike--;
+        if (numberLike > 0) {
+            numberLike--;
+        }
     }
 }

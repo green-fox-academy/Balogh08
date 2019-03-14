@@ -41,4 +41,10 @@ public class RedditController {
         redditService.upVote(id);
         return "redirect:/reddit";
     }
+
+    @RequestMapping(value = "/{id}/decrease", method = RequestMethod.GET)
+    public String decreaseLike(@PathVariable("id") Long id) {
+        redditService.downVote(id);
+        return "redirect:/reddit";
+    }
 }
