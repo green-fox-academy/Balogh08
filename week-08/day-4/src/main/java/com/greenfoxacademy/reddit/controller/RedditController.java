@@ -54,4 +54,10 @@ public class RedditController {
         redditService.delete(id);
         return "redirect:/reddit";
     }
+
+    @RequestMapping(value = "top", method = RequestMethod.GET)
+    public String top(Model model, @RequestParam(value = "pageNumber", required = false) Long pageNumber) {
+        model.addAttribute("posts", redditService.get10BestPost(pageNumber));
+        return "main";
+    }
 }

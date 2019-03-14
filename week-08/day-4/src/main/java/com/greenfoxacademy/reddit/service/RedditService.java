@@ -54,4 +54,8 @@ public class RedditService {
     public void delete(Long id) {
         redditRepository.deleteById(id);
     }
+
+    public List<Post> get10BestPost(Long page) {
+        return redditRepository.top10((page - 1) * 10);
+    }
 }

@@ -45,6 +45,14 @@
             </form>
         </td>
     </tr>
+    <tr>
+        <td colspan="6">
+            <form action="#" th:action="@{'/reddit/top'}" th:method="GET">
+                <input type="number" name="pageNumber" min="1">
+                <input type="submit" value="Go to page">
+            </form>
+        </td>
+    </tr>
 </table>
 
 </body>
