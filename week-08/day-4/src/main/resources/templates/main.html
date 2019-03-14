@@ -10,6 +10,13 @@
 
 <table>
     <caption>Trending post</caption>
+    <tr>
+        <th>Number of votes</th>
+        <th>Like</th>
+        <th>Dislie</th>
+        <th>Title</th>
+        <th>Post Date</th>
+    </tr>
     <tr th:each="post:${posts}">
         <td th:text="${post.numberLike}"></td>
         <td>
