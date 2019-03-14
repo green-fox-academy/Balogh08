@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Reddit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="container">
 
 <a th:href="@{/reddit/submit}">Submit new post</a>
-
-<table>
-    <caption>Trending post</caption>
+<table class="table-responsive">
+    <caption class="text-center text-uppercase">Trending post</caption>
     <tr>
         <th>Number of votes</th>
         <th>Like</th>
-        <th>Dislie</th>
+        <th class="text-capitalize">Dislike</th>
         <th>Title</th>
         <th>Post Date</th>
     </tr>
@@ -21,12 +22,12 @@
         <td th:text="${post.numberLike}"></td>
         <td>
             <form action="#" th:action="@{'/reddit/' + ${post.id} + '/increase'}" method="post">
-                <input type="submit" value="+">
+                <input type="submit" value="+" class="btn btn-success">
             </form>
         </td>
         <td>
             <form action="#" th:action="@{'/reddit/' + ${post.id} + '/decrease'}" method="post">
-                <input type="submit" value="-">
+                <input type="submit" value="-" class="btn btn-danger">
             </form>
         </td>
         <td th:text="${post.title}"></td>
@@ -54,7 +55,8 @@
         </td>
     </tr>
 </table>
-
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
 
