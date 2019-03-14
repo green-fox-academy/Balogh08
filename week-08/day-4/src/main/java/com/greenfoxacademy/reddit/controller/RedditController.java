@@ -1,4 +1,4 @@
-package com.greenfoxacademy.reddit.Controller;
+package com.greenfoxacademy.reddit.controller;
 
 import org.springframework.stereotype.Controller;
 

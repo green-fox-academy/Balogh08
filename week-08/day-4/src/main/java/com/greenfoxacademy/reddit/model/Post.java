@@ -1,4 +1,4 @@
-package com.greenfoxacademy.reddit.Model;
+package com.greenfoxacademy.reddit.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class post {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
 
-    public post() {
+    public Post() {
     }
 
-    public post(String title) {
+    public Post(String title) {
         this.title = title;
     }
 
