@@ -10,7 +10,9 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long numberLike;
     private String title;
+    private String link;
 
     public Post() {
     }
