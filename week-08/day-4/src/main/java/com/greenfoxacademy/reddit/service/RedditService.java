@@ -56,6 +56,10 @@ public class RedditService {
     }
 
     public List<Post> get10BestPost(Long page) {
+        return redditRepository.top10SecondVersion((page - 1) * 10);
+    }
+
+    public List<Post> get10BestPostSecondVersion(Long page) {
         return redditRepository.top10((page - 1) * 10);
     }
 }

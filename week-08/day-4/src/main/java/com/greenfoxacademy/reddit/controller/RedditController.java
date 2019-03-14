@@ -26,6 +26,12 @@ public class RedditController {
         return "main";
     }
 
+    @RequestMapping(value = "page", method = RequestMethod.GET)
+    public String page(Model model, @RequestParam(value = "pageNumber", required = false) Long pageNumber) {
+        model.addAttribute("posts", redditService.get10BestPostSecondVersion(pageNumber));
+        return "main";
+    }
+
     @RequestMapping(value = "submit", method = RequestMethod.GET)
     public String getSubmit() {
         return "submit";

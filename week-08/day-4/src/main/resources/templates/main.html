@@ -9,8 +9,9 @@
 <body class="container">
 
 <a th:href="@{/reddit/submit}">Submit new post</a>
-<table class="table-responsive">
-    <caption class="text-center text-uppercase">Trending post</caption>
+<table class="table table-striped">
+    <caption class="text-center text-uppercase ">Trending post</caption>
+    <thead>
     <tr>
         <th>Number of votes</th>
         <th>Like</th>
@@ -18,6 +19,8 @@
         <th>Title</th>
         <th>Post Date</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="post:${posts}">
         <td th:text="${post.numberLike}"></td>
         <td>
@@ -27,17 +30,19 @@
         </td>
         <td>
             <form action="#" th:action="@{'/reddit/' + ${post.id} + '/decrease'}" method="post">
-                <input type="submit" value="-" class="btn btn-danger">
+                <input type="submit" value="-" class="btn btn-warning">
             </form>
         </td>
         <td th:text="${post.title}"></td>
         <td th:text="${post.date}"></td>
         <td>
             <form action="#" th:action="@{'/reddit/' + ${post.id} + '/delete'}" th:method="DELETE">
-                <input type="submit" value="x">
+                <input type="submit" value="x" class="btn btn-danger">
             </form>
         </td>
     </tr>
+    </tbody>
+    <tfoot>
     <tr>
         <td colspan="6">
             <form action="#" th:action="@{'/reddit'}" th:method="GET">
@@ -54,6 +59,14 @@
             </form>
         </td>
     </tr>
+    <tr>
+        <td colspan="6">
+            <form action="#" th:action="@{'/reddit'}" th:method="GET">
+                <button type="submit" value="1" name="pageNumber">Home Page</button>
+            </form>
+        </td>
+    </tr>
+    </tfoot>
 </table>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
@@ -62,5 +75,5 @@
 
 
 <!--<form action="#" th:action="@{'/reddit/' + ${post.getId()} + '/increase}'}" th:method="GET">-->
-    <!--<input type="submit" value="+">-->
+<!--<input type="submit" value="+">-->
 <!--</form>-->

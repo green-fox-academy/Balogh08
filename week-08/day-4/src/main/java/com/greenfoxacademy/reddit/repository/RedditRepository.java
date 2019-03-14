@@ -13,4 +13,7 @@ public interface RedditRepository extends CrudRepository <Post, Long> {
     @Query(value = "SELECT * FROM Post ORDER BY post.number_like DESC LIMIT :pageNumber, 10", nativeQuery = true)
     List<Post> top10(@Param ("pageNumber") Long pageNumber);
 
+    @Query(value = "SELECT * FROM Post ORDER BY post.number_like DESC LIMIT 10 OFFSET :pageNumber", nativeQuery = true)
+    List<Post> top10SecondVersion(@Param ("pageNumber") Long pageNumber);
+
 }
