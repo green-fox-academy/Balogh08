@@ -47,4 +47,10 @@ public class RedditController {
         redditService.downVote(id);
         return "redirect:/reddit";
     }
+
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    public String deletePost(@PathVariable("id") Long id) {
+        redditService.delete(id);
+        return "redirect:/reddit";
+    }
 }

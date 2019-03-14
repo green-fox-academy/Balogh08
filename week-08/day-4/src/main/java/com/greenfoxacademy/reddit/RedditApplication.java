@@ -23,11 +23,11 @@ public class RedditApplication implements CommandLineRunner {
     }
 
     public void run(String...args) throws Exception {
-        redditRepository.save(new Post("Eat chocolate", "https://www.google.com/"));
-        redditRepository.save(new Post("Soccer all day", "https://www.google.com/"));
-        redditRepository.save(new Post("Summer holydays", "https://www.google.com/"));
-        redditRepository.save(new Post("Programing languages", "https://www.google.com/"));
-        redditRepository.save(new Post("Java", "https://www.google.com/"));
-        redditRepository.save(new Post("Javavavavavavavvavava", "https://www.google.com/"));
+//        redditRepository.save(new Post("Eat chocolate", "https://www.google.com/"));
+//        redditRepository.save(new Post("Soccer all day", "https://www.google.com/"));
+//        redditRepository.save(new Post("Summer holydays", "https://www.google.com/"));
+//        redditRepository.save(new Post("Programing languages", "https://www.google.com/"));
+//        redditRepository.save(new Post("Java", "https://www.google.com/"));
+//        redditRepository.save(new Post("Javavavavavavavvavava", "https://www.google.com/"));
     }
 }
