@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RedditService {
@@ -20,10 +21,15 @@ public class RedditService {
     public List<Post> listAll() {
         List<Post> result = new ArrayList<>();
         redditRepository.findAll().forEach(result::add);
+
+        result = result.stream()
+                .sorted((a, b) -> a.getNumberLike() > b.getNumberLike() ? -1 : 0)
+                .collect(Collectors.toList());
+
         return result;
     }
 
-    public void savePost(String title, String url) {
+    public void savePost(String title   , String url) {
         redditRepository.save(new Post(title, url));
     }
 
