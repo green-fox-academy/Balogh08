@@ -32,8 +32,16 @@
         <td th:text="${post.title}"></td>
         <td th:text="${post.date}"></td>
         <td>
-            <form action="#" th:action="@{'/reddit/' + ${post.id} + '/delete'}", th:method="DELETE">
+            <form action="#" th:action="@{'/reddit/' + ${post.id} + '/delete'}" th:method="DELETE">
                 <input type="submit" value="x">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <form action="#" th:action="@{'/reddit'}" th:method="GET">
+                <input type="number" name="pageNumber" min="1">
+                <input type="submit" value="Go to page">
             </form>
         </td>
     </tr>

@@ -18,12 +18,18 @@ public class RedditService {
         this.redditRepository = redditRepository;
     }
 
-    public List<Post> listAll() {
+    public List<Post> listAll(Long pageNumber) {
+        if (pageNumber == null) {
+            pageNumber = 1L;
+        }
+        Long skipBy = 10 * (pageNumber - 1);
         List<Post> result = new ArrayList<>();
         redditRepository.findAll().forEach(result::add);
 
         result = result.stream()
                 .sorted((a, b) -> a.getNumberLike() > b.getNumberLike() ? -1 : 0)
+                .skip(skipBy)
+                .limit(10)
                 .collect(Collectors.toList());
 
         return result;

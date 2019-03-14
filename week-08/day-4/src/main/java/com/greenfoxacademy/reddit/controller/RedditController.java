@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/reddit")
@@ -20,8 +21,8 @@ public class RedditController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String main(Model model) {
-        model.addAttribute("posts", redditService.listAll());
+    public String main(Model model, @RequestParam(value = "pageNumber", required = false) Long pageNumber) {
+        model.addAttribute("posts", redditService.listAll(pageNumber));
         return "main";
     }
 
