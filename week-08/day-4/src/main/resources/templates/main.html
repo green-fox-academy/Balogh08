@@ -12,7 +12,9 @@
     <caption>Trending post</caption>
     <tr th:each="post:${posts}">
         <td th:text="${post.numberLike}"></td>
-        <td>+</td>
+        <td>
+            <a th:href="@{'/reddit/' + ${post.getId()} + '/increase'}">+</a>
+        </td>
         <td>-</td>
         <td th:text="${post.title}"></td>
     </tr>
@@ -20,3 +22,8 @@
 
 </body>
 </html>
+
+
+<!--<form action="#" th:action="@{'/reddit/' + ${post.getId()} + '/increase}'}" th:method="GET">-->
+    <!--<input type="submit" value="+">-->
+<!--</form>-->

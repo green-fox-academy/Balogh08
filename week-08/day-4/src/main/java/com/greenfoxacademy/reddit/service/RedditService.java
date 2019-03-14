@@ -26,4 +26,11 @@ public class RedditService {
     public void savePost(String title, String url) {
         redditRepository.save(new Post(title, url));
     }
+
+    public void upVote(Long id) {
+        Post post;
+        post = redditRepository.findById(id).orElseThrow(NullPointerException::new);
+        post.increaseLike();
+        redditRepository.save(post);
+    }
 }

@@ -58,4 +58,12 @@ public class Post {
     public void setLink(String link) {
         this.link = link;
     }
+
+    public void increaseLike() {
+        numberLike++;
+    }
+
+    public void decreaseLike() {
+        numberLike--;
+    }
 }
