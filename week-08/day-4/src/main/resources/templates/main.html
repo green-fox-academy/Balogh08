@@ -6,15 +6,15 @@
 </head>
 <body>
 
-<a th:href="@{reddit/submit}">Submit new post</a>
+<a th:href="@{/reddit/submit}">Submit new post</a>
 
 <table>
     <caption>Trending post</caption>
     <tr th:each="post:${posts}">
-        <td th:text="post.id"></td>
+        <td th:text="${post.numberLike}"></td>
         <td>+</td>
         <td>-</td>
-        <td th:text="post.title"></td>
+        <td th:text="${post.title}"></td>
     </tr>
 </table>
 

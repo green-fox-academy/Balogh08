@@ -17,6 +17,12 @@ public class Post {
     public Post() {
     }
 
+    public Post(String title, String link) {
+        this.title = title;
+        this.link = link;
+        numberLike = 0;
+    }
+
     public Post(String title) {
         this.title = title;
     }
@@ -35,5 +41,21 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public long getNumberLike() {
+        return numberLike;
+    }
+
+    public void setNumberLike(long numberLike) {
+        this.numberLike = numberLike;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

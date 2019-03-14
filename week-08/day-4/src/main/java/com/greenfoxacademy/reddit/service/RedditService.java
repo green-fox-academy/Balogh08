@@ -22,4 +22,8 @@ public class RedditService {
         redditRepository.findAll().forEach(result::add);
         return result;
     }
+
+    public void savePost(String title, String url) {
+        redditRepository.save(new Post(title, url));
+    }
 }

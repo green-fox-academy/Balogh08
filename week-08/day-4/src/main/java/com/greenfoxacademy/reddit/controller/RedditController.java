@@ -23,4 +23,15 @@ public class RedditController {
         model.addAttribute("posts", redditService.listAll());
         return "main";
     }
+
+    @RequestMapping(value = "submit", method = RequestMethod.GET)
+    public String getSubmit() {
+        return "submit";
+    }
+
+    @RequestMapping(value = "submit", method = RequestMethod.POST)
+    public String addPost(String title, String url) {
+        redditService.savePost(title, url);
+        return "redirect:/reddit";
+    }
 }
