@@ -14,9 +14,10 @@
         <th>ID</th>
         <th>TITLE</th>
         <th>URGENT</th>
-        <th>DONE</th>
+        <th><a th:href="${'?isActive=' + true}">DONE</a></th>
         <th>DELETE</th>
         <th>EDIT</th>
+        <th>POSTED AT</th>
     </tr>
     </thead>
     <tbody>
@@ -32,6 +33,8 @@
         </td>
         <td>
             <a th:href="@{'/todo/' + ${todo.id} + '/edit'}" class="btn btn-primary">Edit</a>
+        </td>
+        <td th:text="${todo.date}">
         </td>
     </tr>
     </tbody>

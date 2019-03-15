@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -19,6 +20,7 @@ public class Todo {
     private String title;
     private boolean isUrgent;
     private boolean isDone;
+    private Date date;
 
     public Todo() {
     }
@@ -27,14 +29,11 @@ public class Todo {
         this.title = title;
         isUrgent = false;
         isDone = false;
+        date = new Date();
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -59,6 +58,10 @@ public class Todo {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     @Override
