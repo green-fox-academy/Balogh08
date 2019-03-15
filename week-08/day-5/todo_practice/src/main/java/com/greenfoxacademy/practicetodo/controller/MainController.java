@@ -24,4 +24,14 @@ public class MainController {
         model.addAttribute("todos", todoService.listAll(done));
         return "index";
     }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String add() {
+        return "create";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String create() {
+        return "redirect:/todo";
+    }
 }
