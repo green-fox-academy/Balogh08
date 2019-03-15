@@ -45,12 +45,21 @@ public class TodoService {
     }
 
     public Todo editable(Long id) {
-        return todoRepository.findById(id).get();
+        return todoRepository.findById(id).orElseThrow(NullPointerException::new);
     }
 
-    public void edit(Long id, String title) {
-        Todo result;
-        result = todoRepository.findById(id).get();
+    public void edit(Long id, String title, Boolean urgent, Boolean done) {
+        if (urgent == null) {
+            urgent = false;
+        }
+        if (done == null) {
+            done = false;
+        }
+
+        Todo result = todoRepository.findById(id).orElseThrow(NullPointerException::new);
         result.setTitle(title);
+        result.setUrgent(urgent);
+        result.setDone(done);
+        todoRepository.save(result);
     }
 }
