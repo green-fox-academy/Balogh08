@@ -43,4 +43,10 @@ public class TodoService {
     public void delete(Long id) {
         todoRepository.deleteById(id);
     }
+
+    public void edit(Long id, String title) {
+        Todo result;
+        result = todoRepository.findById(id).get();
+        result.setTitle(title);
+    }
 }

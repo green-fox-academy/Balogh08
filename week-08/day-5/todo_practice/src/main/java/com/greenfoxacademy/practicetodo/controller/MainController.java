@@ -42,4 +42,15 @@ public class MainController {
         todoService.delete(id);
         return "redirect:/todo";
     }
+
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String getEdit(@PathVariable("id") Long id) {
+        return "/edit/{id}";
+    }
+
+    @RequestMapping(value = "edit/{id}", method = RequestMethod.PUT)
+    public String edit(@PathVariable("id") Long id) {
+
+        return "redirect:/todo";
+    }
 }

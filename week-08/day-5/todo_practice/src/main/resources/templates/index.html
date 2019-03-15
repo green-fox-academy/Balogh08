@@ -31,7 +31,7 @@
             </form>
         </td>
         <td>
-            <a th:href="@{/todo/edit}" class="btn btn-primary">Edit</a>
+            <a th:href="@{'/todo/edit' + ${todo.id}}" class="btn btn-primary">Edit</a>
         </td>
     </tr>
     </tbody>
