@@ -1,5 +1,7 @@
 package com.greenfoxacademy.practicetodo;
 
+import com.greenfoxacademy.practicetodo.service.TodoService;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,16 @@ import java.util.List;
 
 @Controller
 @SpringBootApplication
-public class PracticetodoApplication {
+public class PracticetodoApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(PracticetodoApplication.class, args);
+    }
+
+    private TodoService todoService;
+
+    public PracticetodoApplication(TodoService todoService) {
+        this.todoService = todoService;
     }
 
     @RequestMapping(value = "test", method = RequestMethod.GET)
@@ -29,4 +37,11 @@ public class PracticetodoApplication {
         return words;
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+        todoService.save("Finish todo project");
+        todoService.save("Workout");
+        todoService.save("Clean up your room");
+        todoService.save("Walk in the city");
+    }
 }
