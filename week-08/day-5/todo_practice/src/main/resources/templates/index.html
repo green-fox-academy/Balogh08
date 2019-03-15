@@ -15,6 +15,8 @@
         <th>TITLE</th>
         <th>URGENT</th>
         <th>DONE</th>
+        <th>DELETE</th>
+        <th>EDIT</th>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +25,14 @@
         <td th:text="${todo.title}"></td>
         <td th:text="${todo.urgent}"></td>
         <td th:text="${todo.done}"></td>
+        <td>
+            <form action="#" th:action="@{'todo/delete/' + ${todo.id}}" th:method="DELETE">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+        </td>
+        <td>
+            <a th:href="@{/todo/edit}" class="btn btn-primary">Edit</a>
+        </td>
     </tr>
     </tbody>
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
