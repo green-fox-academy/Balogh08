@@ -62,8 +62,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String search(Model model ,@RequestParam("searchBy") String searchBy, @RequestParam("searchFor") String searchFor) {
+    public String search(Model model ,@RequestParam("searchBy") int searchBy, @RequestParam("searchFor") String searchFor) {
         model.addAttribute("todos", todoService.search(searchBy, searchFor));
-        return "todolist";
+        return "index";
     }
 }

@@ -62,4 +62,20 @@ public class TodoService {
         result.setDone(done);
         todoRepository.save(result);
     }
+
+    public List<Todo> search(int searchBy, String searchFor) {
+        List<Todo> result = new ArrayList<>(todoRepository.findAll());;
+
+        if (searchBy == 0) {
+            return result.stream()
+                    .filter(todo -> todo.getId() == Integer.parseInt(searchFor))
+                    .collect(Collectors.toList());
+        } else if(searchBy == 1) {
+            return result.stream()
+                    .filter(todo -> todo.getTitle().toLowerCase().contains(searchFor.toLowerCase()))
+                    .collect(Collectors.toList());
+        } else {
+            return result;
+        }
+    }
 }
