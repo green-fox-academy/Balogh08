@@ -43,12 +43,13 @@ public class MainController {
         return "redirect:/todo";
     }
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String getEdit(@PathVariable("id") Long id) {
-        return "/edit/{id}";
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
+    public String getEdit(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("todo", todoService.editable(id));
+        return "edit";
     }
 
-    @RequestMapping(value = "edit/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.PUT)
     public String edit(@PathVariable("id") Long id) {
 
         return "redirect:/todo";
