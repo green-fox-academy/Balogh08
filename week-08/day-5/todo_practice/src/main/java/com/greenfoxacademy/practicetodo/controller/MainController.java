@@ -60,4 +60,10 @@ public class MainController {
         model.addAttribute("todo", todoService.findById(id));
         return "info";
     }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(Model model ,@RequestParam("searchBy") String searchBy, @RequestParam("searchFor") String searchFor) {
+        model.addAttribute("todos", todoService.search(searchBy, searchFor));
+        return "todolist";
+    }
 }

@@ -9,6 +9,14 @@
 <h1>Todos for today</h1>
 <a th:href="@{/todo}" class="btn btn-success">All Todos</a>
 <a th:href="@{/todo/add}" class="btn btn-success">Add new Todo</a>
+<form action="#" th:action="@{/todo/search}" method="get">
+    <select name="searchBy">
+        <option value="id">ID</option>
+        <option value="title">TITLE</option>
+        <input type="search" name="searchFor">
+        <input type="submit" value="Search for Todo">
+    </select>
+</form>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
