@@ -5,14 +5,17 @@
     <title>Create Todo</title>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
-<h1>Create a new Todo</h1>
+<body class="container">
+<h1 class="text-center">Create a new Todo</h1>
+<br>
+<br>
+<br>
 <form action="#" th:action="'/todo/add'" th:method="POST">
-<table>
+<table class="table-condensed">
     <tr>
         <td colspan="2">
             <label for="title">Title</label>
-            <input type="text" id="title" placeholder="Add todo...">
+            <input type="text" id="title" name="todo" placeholder="Add todo...">
         </td>
     </tr>
     <tr>

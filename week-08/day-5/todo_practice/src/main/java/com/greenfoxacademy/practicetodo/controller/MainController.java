@@ -31,7 +31,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String create() {
+    public String create(String todo) {
+        todoService.save(todo);
         return "redirect:/todo";
     }
 }
