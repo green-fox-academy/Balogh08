@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="container">
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h1 class="">Todo's info</h1>
+    </div>
+    <div class="panel-body">
+        <p th:utext="${todo.toString()}"></p>
+    </div>
+</div>
+
+<form action="#" th:action="@{/todo}" method="get">
+    <input type="submit" value="Back to list" class="btn btn-primary">
+</form>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

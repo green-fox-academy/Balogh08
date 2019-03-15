@@ -63,6 +63,8 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo title: " + title + "\nUrgent: " + isUrgent + "\nDone: " + isDone;
+        return "<b>Title:</b> " + title
+                + "<b>Urgent:</b> " + isUrgent
+                + "<b>Done:</b> " + isDone;
     }
 }
