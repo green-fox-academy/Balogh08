@@ -60,4 +60,9 @@ public class Todo {
     public void setDone(boolean done) {
         isDone = done;
     }
+
+    @Override
+    public String toString() {
+        return "Todo title: " + title + "\nUrgent: " + isUrgent + "\nDone: " + isDone;
+    }
 }

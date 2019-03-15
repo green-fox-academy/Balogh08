@@ -44,7 +44,7 @@ public class TodoService {
         todoRepository.deleteById(id);
     }
 
-    public Todo editable(Long id) {
+    public Todo findById(Long id) {
         return todoRepository.findById(id).orElseThrow(NullPointerException::new);
     }
 
