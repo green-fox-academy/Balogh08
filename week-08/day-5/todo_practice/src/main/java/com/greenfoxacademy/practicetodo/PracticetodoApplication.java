@@ -39,9 +39,9 @@ public class PracticetodoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        todoService.save("Finish todo project");
-        todoService.save("Workout");
-        todoService.save("Clean up your room");
-        todoService.save("Walk in the city");
+//        todoService.save("Finish todo project");
+//        todoService.save("Workout");
+//        todoService.save("Clean up your room");
+//        todoService.save("Walk in the city");
     }
 }
