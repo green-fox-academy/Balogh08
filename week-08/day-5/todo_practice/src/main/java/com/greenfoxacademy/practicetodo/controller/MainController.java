@@ -1,7 +1,5 @@
 package com.greenfoxacademy.practicetodo.controller;
 
-import com.greenfoxacademy.practicetodo.model.Assignee;
-import com.greenfoxacademy.practicetodo.service.AssigneeService;
 import com.greenfoxacademy.practicetodo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
     private TodoService todoService;
-    private AssigneeService assigneeService;
 
     @Autowired
-    public MainController(TodoService todoService, AssigneeService assigneeService) {
+    public MainController(TodoService todoService) {
         this.todoService = todoService;
-        this.assigneeService = assigneeService;
     }
 
     @RequestMapping(value = {"", "/", "/list"}, method = RequestMethod.GET)
@@ -69,11 +65,5 @@ public class MainController {
     public String search(Model model ,@RequestParam("searchBy") int searchBy, @RequestParam("searchFor") String searchFor) {
         model.addAttribute("todos", todoService.search(searchBy, searchFor));
         return "index";
-    }
-
-    @RequestMapping(value = "/assignees", method = RequestMethod.GET)
-    public String listAssignees(Model model) {
-        model.addAttribute("assignees", assigneeService.listAll());
-        return "assignee";
     }
 }
