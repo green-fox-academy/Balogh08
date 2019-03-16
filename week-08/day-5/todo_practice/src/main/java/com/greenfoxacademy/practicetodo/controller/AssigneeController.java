@@ -23,4 +23,10 @@ public class AssigneeController {
         model.addAttribute("assignees", assigneeService.listAll());
         return "assignee";
     }
+
+    @RequestMapping(value = "/assignees/add", method = RequestMethod.POST)
+    public String addAssignee(String name, String email) {
+        assigneeService.add(name, email);
+        return "redirect:/assignees";
+    }
 }

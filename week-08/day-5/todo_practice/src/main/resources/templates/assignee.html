@@ -6,11 +6,11 @@
 </head>
 <body class="container">
 
-<form action="#" th:action="@{todo/assignee/add}" method="post">
+<form action="#" th:action="@{'todo/assignees/add'}" method="post">
     <legend>Add assignee here!</legend>
     <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Assignee's name..." min="6">
+    <input type="text" id="name" name="name" placeholder="Assignee's name...">
     </div>
     <div class="form-group">
         <label for="email">E-mail</label>
