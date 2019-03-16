@@ -29,4 +29,15 @@ public class AssigneeService {
     public void delete(Long id) {
         assigneeRepository.deleteById(id);
     }
+
+    public void edit(Long id, String name, String email) {
+        Assignee assignee = assigneeRepository.findById(id).orElseThrow(NullPointerException::new);
+        assignee.setName(name);
+        assignee.setEmail(email);
+        assigneeRepository.save(assignee);
+    }
+
+    public Assignee findById(Long id){
+        return assigneeRepository.findById(id).orElseThrow(NullPointerException::new);
+    }
 }
