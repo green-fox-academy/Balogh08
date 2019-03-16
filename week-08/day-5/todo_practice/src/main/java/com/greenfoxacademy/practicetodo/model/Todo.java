@@ -3,10 +3,7 @@ package com.greenfoxacademy.practicetodo.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -22,6 +19,10 @@ public class Todo {
     private boolean isDone;
     private Date date;
 
+    @ManyToOne
+    @JoinColumn(name = "assigne_id")
+    private Assignee assignee;
+
     public Todo() {
     }
 
@@ -30,6 +31,15 @@ public class Todo {
         isUrgent = false;
         isDone = false;
         date = new Date();
+
+    }
+
+    public Todo(String title, Assignee assignee) {
+        this.title = title;
+        isUrgent = false;
+        isDone = false;
+        date = new Date();
+        this.assignee = assignee;
     }
 
     @Override
