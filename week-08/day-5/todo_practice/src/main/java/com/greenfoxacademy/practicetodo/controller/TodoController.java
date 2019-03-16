@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/todo")
-public class MainController {
+public class TodoController {
 
     private TodoService todoService;
 
     @Autowired
-    public MainController(TodoService todoService) {
+    public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
 
