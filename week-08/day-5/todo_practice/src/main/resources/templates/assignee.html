@@ -6,6 +6,19 @@
 </head>
 <body class="container">
 
+<form action="#" th:action="@{todo/assignee/add}" method="post">
+    <legend>Add assignee here!</legend>
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Assignee's name..." min="6">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" placeholder="Assignee's email..." min="6">
+    </div>
+    <input type="submit" value="Add assignee">
+</form>
+
 <table class="table table-striped table-hover">
     <thead>
     <tr>
