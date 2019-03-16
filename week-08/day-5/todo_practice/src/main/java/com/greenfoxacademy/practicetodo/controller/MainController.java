@@ -66,4 +66,10 @@ public class MainController {
         model.addAttribute("todos", todoService.search(searchBy, searchFor));
         return "index";
     }
+
+    @RequestMapping(value = "/assignees", method = RequestMethod.GET)
+    public String listAssignees(Model model) {
+        model.addAttribute("assignees", assigneeService.listAll());
+        return "assignee";
+    }
 }
