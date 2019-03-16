@@ -1,5 +1,7 @@
 package com.greenfoxacademy.practicetodo.controller;
 
+import com.greenfoxacademy.practicetodo.model.Assignee;
+import com.greenfoxacademy.practicetodo.service.AssigneeService;
 import com.greenfoxacademy.practicetodo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
     private TodoService todoService;
+    private AssigneeService assigneeService;
 
     @Autowired
-    public MainController(TodoService todoService) {
+    public MainController(TodoService todoService, AssigneeService assigneeService) {
         this.todoService = todoService;
+        this.assigneeService = assigneeService;
     }
 
     @RequestMapping(value = {"", "/", "/list"}, method = RequestMethod.GET)

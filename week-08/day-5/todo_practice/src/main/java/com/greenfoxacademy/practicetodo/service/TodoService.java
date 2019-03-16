@@ -14,7 +14,6 @@ public class TodoService {
     private TodoRepository todoRepository;
 
     @Autowired
-
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
