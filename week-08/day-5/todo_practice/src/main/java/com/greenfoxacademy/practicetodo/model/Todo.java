@@ -32,38 +32,6 @@ public class Todo {
         date = new Date();
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public boolean isUrgent() {
-        return isUrgent;
-    }
-
-    public void setUrgent(boolean urgent) {
-        isUrgent = urgent;
-    }
-
-    public boolean isDone() {
-        return isDone;
-    }
-
-    public void setDone(boolean done) {
-        isDone = done;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
     @Override
     public String toString() {
         return "<b>Title:</b> " + title
