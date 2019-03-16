@@ -25,4 +25,8 @@ public class AssigneeService {
         Assignee assignee = new Assignee(name, email);
         assigneeRepository.save(assignee);
     }
+
+    public void delete(Long id) {
+        assigneeRepository.deleteById(id);
+    }
 }
