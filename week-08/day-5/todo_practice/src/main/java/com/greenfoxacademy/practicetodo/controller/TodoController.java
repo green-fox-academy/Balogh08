@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+
 @Controller
 @RequestMapping("/todo")
 public class TodoController {
@@ -60,7 +62,11 @@ public class TodoController {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String search(Model model ,@RequestParam("searchBy") int searchBy, @RequestParam("searchFor") String searchFor) {
-        model.addAttribute("todos", todoService.search(searchBy, searchFor));
+        try {
+            model.addAttribute("todos", todoService.search(searchBy, searchFor));
+        } catch (ParseException ex) {
+            ex.getErrorOffset();
+        }
         return "index";
     }
 }
