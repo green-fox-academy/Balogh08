@@ -12,7 +12,7 @@
         <h1 class="text-center">Edit Assignee</h1>
     </div>
     <div class="panel-body">
-        <form action="#" th:action="@{'/todo/assignees/' + ${assignee.id} + '/edit'}" th:object="${assignee}" th:method="PUT">
+        <form action="#" th:action="@{'/assignees/' + ${assignee.id} + '/edit'}" th:object="${assignee}" th:method="PUT">
             <table class="table-condensed">
                 <tr>
                     <td colspan="2">
@@ -32,7 +32,7 @@
                         <input type="reset" value="Reset" class="btn btn-warning">
                     </td>
                     <td>
-                        <a th:href="@{/todo/assignees}" class="btn btn-danger">Cancel</a>
+                        <a th:href="@{/assignees}" class="btn btn-danger">Cancel</a>
                     </td>
                 </tr>
             </table>

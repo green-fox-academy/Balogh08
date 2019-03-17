@@ -31,10 +31,10 @@ public class AssigneeService {
     }
 
     public void edit(Long id, String name, String email) {
-        Assignee assignee = assigneeRepository.findById(id).orElseThrow(NullPointerException::new);
-        assignee.setName(name);
-        assignee.setEmail(email);
-        assigneeRepository.save(assignee);
+        Assignee result = assigneeRepository.findById(id).orElseThrow(NullPointerException::new);
+        result.setName(name);
+        result.setEmail(email);
+        assigneeRepository.save(result);
     }
 
     public Assignee findById(Long id){

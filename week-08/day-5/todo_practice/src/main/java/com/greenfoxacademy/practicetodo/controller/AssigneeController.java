@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/todo")
+@RequestMapping("/assignees")
 public class AssigneeController {
 
     private AssigneeService assigneeService;
@@ -17,33 +17,33 @@ public class AssigneeController {
         this.assigneeService = assigneeService;
     }
 
-    @RequestMapping(value = "/assignees", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String listAssignees(Model model) {
         model.addAttribute("assignees", assigneeService.listAll());
         return "assignee";
     }
 
-    @RequestMapping(value = "/todo/assignees/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addAssignee(String name, String email) {
         assigneeService.add(name, email);
-        return "redirect:/todo/assignees";
+        return "redirect:/assignees";
     }
 
-    @DeleteMapping("/todo/assignees/{id}/delete")
+    @DeleteMapping("/{id}/delete")
     public String deleteAssignee(@PathVariable("id") Long id) {
         assigneeService.delete(id);
-        return "redirect:/todo/assignees";
+        return "redirect:/assignees";
     }
 
-    @GetMapping("/todo/assignees/{id}/edit")
+    @GetMapping("/{id}/edit")
     public String getEditAssignee(Model model, @PathVariable("id") Long id) {
         model.addAttribute("assignee", assigneeService.findById(id));
         return "editassignee";
     }
 
-    @PutMapping("/todo/assignees/{id}/edit")
+    @PutMapping("/{id}/edit")
     public String editAssignee(@PathVariable("id") Long id, String name, String email) {
         assigneeService.edit(id, name, email);
-        return "redirect:/todo/assignees";
+        return "redirect:/assignees";
     }
 }

@@ -7,7 +7,7 @@
 <body class="container">
 <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 
-<form action="#" th:action="@{'todo/assignees/add'}" th:method="POST">
+<form action="#" th:action="@{'assignees/add'}" th:method="POST">
     <legend>Add assignee here!</legend>
     <div class="form-group">
     <label for="name">Name</label>
@@ -35,12 +35,12 @@
         <td th:text="${assignee.name}"></td>
         <td th:text="${assignee.email}"></td>
         <td>
-            <form action="#" th:action="@{'todo/assignees/' + ${assignee.id} + '/delete'}" th:method="DELETE">
+            <form action="#" th:action="@{'assignees/' + ${assignee.id} + '/delete'}" th:method="DELETE">
                 <input type="submit" value="DELETE" class="btn btn-danger">
             </form>
         </td>
         <td>
-            <form action="#" th:action="@{'todo/assignees/' + ${assignee.id} + '/edit'}" th:method="GET">
+            <form action="#" th:action="@{'assignees/' + ${assignee.id} + '/edit'}" th:method="GET">
                 <input type="submit" value="EDIT" class="btn btn-primary">
             </form>
         </td>

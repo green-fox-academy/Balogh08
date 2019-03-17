@@ -17,7 +17,7 @@ public class Assignee {
 
     private String name;
     private String email;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "assignee")
+    @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY, mappedBy = "assignee")
     private List<Todo> todos;
 
     public Assignee() {
@@ -27,7 +27,6 @@ public class Assignee {
     public Assignee(String name, String email) {
         this.name = name;
         this.email = email;
-        todos = new ArrayList<>();
     }
 
     public void addTodo(Todo todo) {
