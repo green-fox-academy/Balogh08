@@ -31,7 +31,7 @@
         <th>EDIT</th>
         <th>POSTED AT</th>
         <th>ASSIGNED TO
-        <form action="#" th:action="@{/assignees/filter}" th:method="get">
+        <form action="#" th:action="@{/todo/filter}" th:method="get">
             <select name="assigneeName">
                 <option th:each="todo : ${todos}" th:text="${todo.assignee}" th:value="${todo.assignee}"></option>
                 <input type="submit" value="Assigned to">

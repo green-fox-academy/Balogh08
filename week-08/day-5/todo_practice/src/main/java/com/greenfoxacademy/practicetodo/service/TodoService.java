@@ -1,5 +1,6 @@
 package com.greenfoxacademy.practicetodo.service;
 
+import com.greenfoxacademy.practicetodo.model.Assignee;
 import com.greenfoxacademy.practicetodo.model.Todo;
 import com.greenfoxacademy.practicetodo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,13 @@ public class TodoService {
 
     public Todo findById(Long id) {
         return todoRepository.findById(id).orElseThrow(NullPointerException::new);
+    }
+
+    public List<Todo> findByForeignKey(Assignee assignee) {
+        List<Todo> result = todoRepository.findAll();
+        return result.stream()
+                .filter(todo -> todo.getAssignee().equals(assignee))
+                .collect(Collectors.toList());
     }
 
     public void edit(Long id, String title, Boolean urgent, Boolean done) {

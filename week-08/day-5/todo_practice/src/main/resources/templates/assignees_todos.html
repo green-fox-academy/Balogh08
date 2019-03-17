@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignees Todos</title>
+</head>
+<body>
+<table>
+<caption th:text="'Todos for ' + ${assignee.name}"></caption>
+    <tr th:each="todo: ${todos}">
+        <td th:text="${todo.title}"></td>
+    </tr>
+</table>
+</body>
+</html>

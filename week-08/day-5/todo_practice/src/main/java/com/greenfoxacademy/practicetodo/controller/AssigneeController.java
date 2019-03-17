@@ -50,6 +50,13 @@ public class AssigneeController {
     @GetMapping("/filter")
     public String filterByAssignee(Model model, @RequestParam("assigneeName") String name) {
         model.addAttribute("todos", assigneeService.findByName(name));
-        return "index";
+        return "redirect:/todo";
+    }
+
+    @GetMapping("/{id}/details")
+    public String getAssigneesTodos(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("assignee", assigneeService.findById(id));
+        model.addAttribute("todos", assigneeService.findById(id).getTodos());
+        return "assignees_todos";
     }
 }

@@ -1,5 +1,6 @@
 package com.greenfoxacademy.practicetodo.controller;
 
+import com.greenfoxacademy.practicetodo.model.Assignee;
 import com.greenfoxacademy.practicetodo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,6 +68,12 @@ public class TodoController {
         } catch (ParseException ex) {
             ex.getErrorOffset();
         }
+        return "index";
+    }
+
+    @GetMapping("/filter")
+    public String filterByAssignee(Model model, @RequestParam("assigneeName") Assignee key) {
+        model.addAttribute("todos", todoService.findByForeignKey(key));
         return "index";
     }
 }

@@ -27,12 +27,13 @@
         <th>Name</th>
         <th>E-mail</th>
         <th>Delete</th>
+        <th>EDIT</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="assignee : ${assignees}">
         <td th:text="${assignee.id}"></td>
-        <td th:text="${assignee.name}"></td>
+        <td><a th:href="@{'/assignees/' + ${assignee.id} + '/details'}" th:text="${assignee.name}"></a></td>
         <td th:text="${assignee.email}"></td>
         <td>
             <form action="#" th:action="@{'assignees/' + ${assignee.id} + '/delete'}" th:method="DELETE">
