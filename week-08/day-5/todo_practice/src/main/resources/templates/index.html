@@ -30,7 +30,7 @@
         <th>DELETE</th>
         <th>EDIT</th>
         <th>POSTED AT</th>
-        <th>ASSIGNED TO
+        thh>ASSIGNED TO
         <form action="#" th:action="@{/todo/filter}" th:method="get">
             <select name="assigneeName">
                 <option th:each="todo : ${todos}" th:text="${todo.assignee}" th:value="${todo.assignee}"></option>
@@ -56,7 +56,8 @@
         </td>
         <td th:text="${todo.date}">
         </td>
-        <td th:text="${todo.assignee}"></td>
+        <td th:if="${todo.assignee != null}"><a th:href="@{'/assignees/' + ${todo.getAssignee().getId()} + '/details'}" th:text="${todo.assignee}"></a></td>
+        <td th:if="${todo.assignee == null}"></td>
     </tr>
     </tbody>
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>

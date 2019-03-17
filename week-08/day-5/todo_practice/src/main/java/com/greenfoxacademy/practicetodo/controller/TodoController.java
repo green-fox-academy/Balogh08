@@ -26,6 +26,12 @@ public class TodoController {
         return "index";
     }
 
+    @GetMapping("/filter")
+    public String filterByAssignee(Model model, @RequestParam("assigneeName") Assignee key) {
+        model.addAttribute("todos", todoService.findByForeignKey(key));
+        return "index";
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
         return "create";
@@ -68,12 +74,6 @@ public class TodoController {
         } catch (ParseException ex) {
             ex.getErrorOffset();
         }
-        return "index";
-    }
-
-    @GetMapping("/filter")
-    public String filterByAssignee(Model model, @RequestParam("assigneeName") Assignee key) {
-        model.addAttribute("todos", todoService.findByForeignKey(key));
         return "index";
     }
 }
