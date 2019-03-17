@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AssigneeService {
@@ -39,5 +40,12 @@ public class AssigneeService {
 
     public Assignee findById(Long id){
         return assigneeRepository.findById(id).orElseThrow(NullPointerException::new);
+    }
+
+    public List<Assignee> findByName(String name) {
+        List<Assignee> result = assigneeRepository.findAll();
+        return result.stream()
+                .filter(assignee -> assignee.getName().equalsIgnoreCase(name))
+                .collect(Collectors.toList());
     }
 }

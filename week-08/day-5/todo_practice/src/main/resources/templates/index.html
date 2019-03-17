@@ -10,7 +10,7 @@
 <a th:href="@{/todo}" class="btn btn-success">All Todos</a>
 <a th:href="@{/todo/add}" class="btn btn-success">Add new Todo</a>
 <a th:href="@{/assignees}" class="btn btn-info">List of assignees</a>
-<form action="#" th:action="@{/todo/search}" method="get">
+<form action="#" th:action="@{/todo/search}" th:method="get">
     <select name="searchBy">
         <option value="0">ID</option>
         <option value="1">TITLE</option>
@@ -29,7 +29,14 @@
         <th>DELETE</th>
         <th>EDIT</th>
         <th>POSTED AT</th>
-        <th>ASSIGNED TO</th>
+        <th>ASSIGNED TO
+        <form action="#" th:action="@{/assignees/filter}" th:method="get">
+            <select name="assigneeName">
+                <option th:each="todo : ${todos}" th:text="${todo.assignee}" th:value="${todo.assignee}"></option>
+                <input type="submit" value="Assigned to">
+            </select>
+        </form>
+        </th>
     </tr>
     </thead>
     <tbody>

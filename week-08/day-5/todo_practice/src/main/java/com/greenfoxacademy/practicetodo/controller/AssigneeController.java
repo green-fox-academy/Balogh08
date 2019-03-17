@@ -46,4 +46,10 @@ public class AssigneeController {
         assigneeService.edit(id, name, email);
         return "redirect:/assignees";
     }
+
+    @GetMapping("/filter")
+    public String filterByAssignee(Model model, @RequestParam("assigneeName") String name) {
+        model.addAttribute("todos", assigneeService.findByName(name));
+        return "index";
+    }
 }
