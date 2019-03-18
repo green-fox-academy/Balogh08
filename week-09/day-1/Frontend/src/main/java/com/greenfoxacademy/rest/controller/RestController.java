@@ -16,7 +16,7 @@ public class RestController {
         if (input != null) {
             return new Doubling(input);
         } else {
-            return new ErrorMessage("Please provide an input");
+            return new ErrorMessage("Please provide an input!");
         }
     }
 
