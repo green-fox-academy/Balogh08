@@ -10,6 +10,7 @@ public class Doubling {
     public Doubling(Integer received) {
         this.received = received;
         result = 2 * received;
+
     }
 
     public int getReceived() {
