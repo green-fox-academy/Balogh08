@@ -4,6 +4,7 @@ import java.util.List;
 
 public class ArrayObject {
     private String what;
+    private int[] numbers;
 
     public int[] getNumbers() {
         return numbers;
@@ -12,8 +13,6 @@ public class ArrayObject {
     public void setNumbers(int[] numbers) {
         this.numbers = numbers;
     }
-
-    private int[] numbers;
 
     public ArrayObject() {
     }

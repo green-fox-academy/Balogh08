@@ -2,13 +2,14 @@ package com.greenfoxacademy.rest.Service;
 
 import com.greenfoxacademy.rest.Repository.LogRepository;
 import com.greenfoxacademy.rest.model.Log;
+import com.greenfoxacademy.rest.model.LogServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class LogService  {
+public class LogService implements LogServiceInterface {
     private LogRepository logRepository;
 
     @Autowired
@@ -20,7 +21,11 @@ public class LogService  {
         return logRepository.findAll();
     }
 
-    public void saveLog(String endpoint, String data) {
+    public void log(String endpoint, String data) {
         logRepository.save(new Log(endpoint, data));
+    }
+
+    public long countEntries() {
+        return logRepository.count();
     }
 }
