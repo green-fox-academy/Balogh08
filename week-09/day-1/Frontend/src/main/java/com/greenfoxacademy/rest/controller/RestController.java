@@ -44,4 +44,18 @@ public class RestController {
             return new ErrorMessage("Please provide a number!");
         }
     }
+
+    @PostMapping("/arrays")
+    public Object arrayHandler(@RequestBody(required = false) ArrayObject array) {
+        if (array.getWhat() != null && array.getNumbers() != null) {
+            if(array.getWhat().equalsIgnoreCase("sum")) {
+                return array.sum();
+            } else if (array.getWhat().equalsIgnoreCase("multiply")) {
+                return array.multiply();
+            } else if(array.getWhat().equalsIgnoreCase("doubling")) {
+                    return array.doubling();
+            }
+        }
+        return new ErrorMessage("Please provide what to do with the numbers!");
+    }
 }
