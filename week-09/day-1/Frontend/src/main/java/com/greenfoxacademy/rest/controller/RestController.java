@@ -1,12 +1,7 @@
 package com.greenfoxacademy.rest.controller;
 
-import com.greenfoxacademy.rest.model.AppendA;
-import com.greenfoxacademy.rest.model.Doubling;
-import com.greenfoxacademy.rest.model.ErrorMessage;
-import com.greenfoxacademy.rest.model.Greeter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.greenfoxacademy.rest.model.*;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -37,5 +32,16 @@ public class RestController {
     @GetMapping("/appenda/{appendable}")
     public Object appenda(@PathVariable(value = "appendable", required = false) String appendable) {
             return new AppendA(appendable);
+    }
+
+    @PostMapping("/dountil/{action}")
+    public Object doUntil(@PathVariable("action") String action, @RequestBody(required = false) Until until) {
+        if (until.getUntil() != null) {
+            DoUntil doUntil = new DoUntil();
+            doUntil.setResult(action, until.getUntil());
+            return doUntil;
+        } else {
+            return new ErrorMessage("Please provide a number!");
+        }
     }
 }
