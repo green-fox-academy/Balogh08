@@ -4,18 +4,24 @@ import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.mockito.Mockito.when;
+
+import com.greenfoxacademy.rest.controller.RestController;
 
 import com.greenfoxacademy.rest.model.LogServiceInterface;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(RestController.class)
 public class RestControllerTest {
 
     @Autowired
@@ -66,5 +72,32 @@ public class RestControllerTest {
                 .andExpect(status().isNotFound());
     }
 
+    @Test
+    public void doUntil_Sum10_Returns55() throws Exception {
+        this.mockMvc.perform(post("/dountil/sum")
+                    .contentType(MediaType.APPLICATION_JSON_UTF8)
+                    .content("{\"until\": 10}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result",
+                        is(55)));
+    }
+
+    @Test
+    public void doUntil_Factory4_Returns55() throws Exception {
+        this.mockMvc.perform(post("/dountil/factor")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content("{\"until\": 5}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result",
+                        is(120)));
+    }
+
+    @Test
+    public void doUntil_ActrionMissing_ProvideNumber() throws Exception {
+        this.mockMvc.perform(post("/dountil/sum")
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.error",
+                        is("Please provide a number!")));
+    }
 
 }

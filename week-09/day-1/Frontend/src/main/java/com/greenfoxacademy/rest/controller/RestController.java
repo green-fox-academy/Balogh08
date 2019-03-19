@@ -47,11 +47,12 @@ public class RestController {
 
     @PostMapping("/dountil/{action}")
     public Object doUntil(@PathVariable("action") String action, @RequestBody(required = false) Until until) {
-        logService.log("/dountil/" + action, "until=" + until.getUntil());
-        if (until.getUntil() != null) {
+        if (until != null) {
             DoUntil doUntil = new DoUntil();
             doUntil.setResult(action, until.getUntil());
+            logService.log("/dountil/" + action, "until=" + until.getUntil());
             return doUntil;
+
         } else {
             logService.log("/dountil/" + action, "until=null");
             return new ErrorMessage("Please provide a number!");
