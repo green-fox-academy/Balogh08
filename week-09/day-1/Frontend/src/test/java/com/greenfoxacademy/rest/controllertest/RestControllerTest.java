@@ -61,7 +61,7 @@ public class RestControllerTest {
     }
 
     @Test
-    public void appenda_Null_ReturnsKutya() throws Exception {
+    public void appenda_Null_ReturnsNotFund() throws Exception {
         this.mockMvc.perform(get("/appenda/"))
                 .andExpect(status().isNotFound());
     }
