@@ -2,6 +2,7 @@ package com.greenfoxacademy.rest.controllertest;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.greenfoxacademy.rest.model.LogServiceInterface;
@@ -55,8 +56,14 @@ public class RestControllerTest {
 
     @Test
     public void appenda_Kuty_ReturnsKutya() throws Exception {
-        this.mockMvc.perform(get("/dountil/kuty"))
-                .andExpect(jsonPath("$.result", is("kutya")));
+        this.mockMvc.perform(get("/appenda/kuty"))
+                .andExpect(jsonPath("$.appended", is("kutya")));
+    }
+
+    @Test
+    public void appenda_Null_ReturnsKutya() throws Exception {
+        this.mockMvc.perform(get("/appenda/"))
+                .andExpect(status().isNotFound());
     }
 
 
