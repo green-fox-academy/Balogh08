@@ -106,4 +106,21 @@ public class RestControllerTest {
                         is("Please provide a number!")));
     }
 
+    @Test
+    public void arrays_Null_ErrorMessage() throws Exception {
+        this.mockMvc.perform(post("/arrays"))
+                .andExpect(jsonPath("$.error",
+                        is("Please provide what to do with the numbers!")));
+    }
+
+    @Test
+    public void arrays_Sum_RetrunSumOfArray() throws Exception {
+        this.mockMvc.perform(post("/arrays")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content("{\"what\":\"sum\"," + "\"numbers\":[2,3,5,6]}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result",
+                        is(16))); // TODO: 2019. 03. 19. $.result solve 
+    }
+
 }

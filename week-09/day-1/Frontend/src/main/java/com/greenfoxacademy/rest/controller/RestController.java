@@ -61,8 +61,9 @@ public class RestController {
 
     @PostMapping("/arrays")
     public Object arrayHandler(@RequestBody(required = false) ArrayObject array) {
-        logService.log("/arrays", "what=" + array.getWhat() + " numbers=" + Arrays.toString(array.getNumbers()));
-        if (array.getWhat() != null && array.getNumbers() != null) {
+
+        if (array != null) {
+            logService.log("/arrays", "what=" + array.getWhat() + " numbers=" + Arrays.toString(array.getNumbers()));
             if(array.getWhat().equalsIgnoreCase("sum")) {
                 return array.sum();
             } else if (array.getWhat().equalsIgnoreCase("multiply")) {
