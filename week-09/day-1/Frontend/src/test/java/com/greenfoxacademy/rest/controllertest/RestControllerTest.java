@@ -83,7 +83,7 @@ public class RestControllerTest {
     }
 
     @Test
-    public void doUntil_Factory4_Returns55() throws Exception {
+    public void doUntil_Factory5_Returns120() throws Exception {
         this.mockMvc.perform(post("/dountil/factor")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content("{\"until\": 5}"))
@@ -93,9 +93,15 @@ public class RestControllerTest {
     }
 
     @Test
-    public void doUntil_ActrionMissing_ProvideNumber() throws Exception {
-        this.mockMvc.perform(post("/dountil/sum")
-                .contentType(MediaType.APPLICATION_JSON_UTF8))
+    public void doUntil_ActrionMissingAtSum_ProvideNumber() throws Exception {
+        this.mockMvc.perform(post("/dountil/sum"))
+                .andExpect(jsonPath("$.error",
+                        is("Please provide a number!")));
+    }
+
+    @Test
+    public void doUntil_ActrionMissingAtFactory_ProvideNumber() throws Exception {
+        this.mockMvc.perform(post("/dountil/factor"))
                 .andExpect(jsonPath("$.error",
                         is("Please provide a number!")));
     }
