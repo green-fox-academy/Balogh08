@@ -12,14 +12,16 @@ public class Alias {
     private long id;
 
     private String url;
-    private String name;
+    private String alias;
+    private int hitCount;
+    private int secretCode;
 
     public Alias() {
     }
 
-    public Alias(String url, String name) {
+    public Alias(String url, String alias) {
         this.url = url;
-        this.name = name;
+        this.alias = alias;
     }
 
     public long getId() {
@@ -34,11 +36,27 @@ public class Alias {
         this.url = url;
     }
 
-    public String getName() {
-        return name;
+    public String getAlias() {
+        return alias;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public int getHitCount() {
+        return hitCount;
+    }
+
+    public void setHitCount(int hitCount) {
+        this.hitCount = hitCount;
+    }
+
+    public int getSecretCode() {
+        return secretCode;
+    }
+
+    public void setSecretCode(int secretCode) {
+        this.secretCode = secretCode;
     }
 }

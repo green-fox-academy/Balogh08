@@ -7,6 +7,8 @@
 <body>
 <h2>Default</h2>
 
+<p th:utext="'Your URL is aliased to  and your secret code is '"></p>
+
 <form action="#" th:action="@{'/save-link'}" th:method="POST" th:object="${alias}">
     <label>
         URL
@@ -18,7 +20,7 @@
     <label>
         Alias
         <br>
-        <input type="url" th:field="*{name}">
+        <input type="url" th:field="*{alias}">
     </label>
     <br>
 
