@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<h2>Default</h2>
+
+<form action="#" th:action="@{'/'}" th:method="POST" th:object="alias">
+    <label>
+        URL
+        <br>
+        <input type="url" th:field="*{url}">
+    </label>
+    <br>
+
+    <label>
+        Alias
+        <br>
+        <input type="url" th:field="*{name}">
+    </label>
+    <br>
+
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
