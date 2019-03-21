@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AliasRepository extends JpaRepository<Alias, Long> {
 
-    public Alias findAliasByAliasName(String aliasName);
+    Alias findAliasByAliasName(String aliasName);
+
+    boolean existsById(Long id);
 }

@@ -1,6 +1,7 @@
 package com.greenfoxacademy.trialexam.controller;
 
 import com.greenfoxacademy.trialexam.model.Alias;
+import com.greenfoxacademy.trialexam.model.SecretCodeJson;
 import com.greenfoxacademy.trialexam.service.AliasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,25 +45,52 @@ public class AliasController {
     }
 
     @GetMapping("/a/{aliasName}")
-    public String goWebpage(@PathVariable("aliasName") String aliasName) {
+    public Object goWebpage(@PathVariable("aliasName") String aliasName) {
         if (aliasService.getByAliasName(aliasName) != null) {
             aliasService.increaseHits(aliasName);
             return "redirect:" + aliasService.getByAliasName(aliasName).getUrl();
         } else {
-            return "redirect:/error";
+            ResponseEntity responseEntity = new ResponseEntity(404, null, HttpStatus.NOT_FOUND);
+            return responseEntity;
         }
     }
 
-    @GetMapping("/error")
-    @ResponseStatus(code = HttpStatus.FORBIDDEN)
-    public String errorPage() {
-        return "error";
-    }
+//    @GetMapping("/a/{aliasName}")
+//    public String goWebpage(@PathVariable("aliasName") String aliasName) {
+//        if (aliasService.getByAliasName(aliasName) != null) {
+//            aliasService.increaseHits(aliasName);
+//            return "redirect:" + aliasService.getByAliasName(aliasName).getUrl();
+//        } else {
+//            return "redirect:/error";
+//        }
+//    }
+//
+//    @GetMapping("/error")
+//    @ResponseStatus(code = HttpStatus.NOT_FOUND)
+//    public String errorPage() {
+//        return "error";
+//    }
+
 
     @GetMapping("/api/links")
     @ResponseBody
     public Object links() {
-
         return aliasService.listAll();
+    }
+
+    @DeleteMapping("/api/links/{id}")
+    @ResponseBody
+    public Object deleteAlias(@PathVariable("id") Long id, @RequestBody SecretCodeJson secretCodeJson) {
+        if (!aliasService.existById(id)) {
+            ResponseEntity responseEntity = new ResponseEntity(HttpStatus.NOT_FOUND);
+            return responseEntity;
+        } else if (!secretCodeJson.getSecretCode().equals(aliasService.getById(id).getSecretCode())) {
+            ResponseEntity responseEntity = new ResponseEntity(HttpStatus.FORBIDDEN);
+            return responseEntity;
+        } else {
+            aliasService.removeAlias(id);
+            ResponseEntity responseEntity = new ResponseEntity(HttpStatus.NO_CONTENT);
+            return responseEntity;
+        }
     }
 }

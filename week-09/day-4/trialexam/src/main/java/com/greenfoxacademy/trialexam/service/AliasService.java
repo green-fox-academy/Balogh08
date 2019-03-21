@@ -19,7 +19,10 @@ public class AliasService {
     }
 
     public Alias getById(Long id) {
-        return aliasRepository.findById(id).get();
+        if (aliasRepository.findById(id) != null) {
+            return aliasRepository.findById(id).get();
+        }
+        return null;
     }
 
     public void createAlias(Alias alias) {
@@ -52,5 +55,21 @@ public class AliasService {
                 System.out.println(alias.getHitCount());
             }
         }
+    }
+
+    public void removeAlias(Long id) {
+        aliasRepository.deleteById(id);
+    }
+
+    public List<String> getSecretCodes() {
+        List<String> secretCodes = new ArrayList<>();
+        for (Alias alias : aliasRepository.findAll()) {
+            secretCodes.add(alias.getSecretCode());
+        }
+        return secretCodes;
+    }
+
+    public boolean existById(Long id) {
+        return aliasRepository.existsById(id);
     }
 }
