@@ -1,0 +1,20 @@
+1.Controllerrel kezdeni
+	Reqestmappingeket megcsinálni voidként eleinte
+2.Index page vázát megcsinálni
+	formban actrion="#" és th:action="@{}"
+	th:object="link" --> @ModelAttribute("link") adja át az értéket
+
+	<label>
+		Name
+		<input type="url" th:field"*{}">
+	</label>
+
+3. Modelben a 'link'-et megcsináljuk h lássa az index.html, feladat leírásból leszûröm hogy mi kell bele
+
+4. random code megcsinálni
+5. database, create-drop
+6. repository: interface
+7. service: constructor nem feltétlenül kell
+8. controllerben constructor
+9. a linket elmentem a servicbe is
+10. indexben th:if ha érvényes az alias 

@@ -59,7 +59,7 @@ public class TodoService {
                 .collect(Collectors.toList());
     }
 
-    public void edit(Long id, String title, Boolean urgent, Boolean done) {
+    public void edit(Long id, String title, Boolean urgent, Boolean done, Assignee assignee) {
         if (urgent == null) {
             urgent = false;
         }
@@ -71,6 +71,7 @@ public class TodoService {
         result.setTitle(title);
         result.setUrgent(urgent);
         result.setDone(done);
+        result.setAssignee(assignee);
         todoRepository.save(result);
     }
 
@@ -102,5 +103,16 @@ public class TodoService {
             }
         }
             return result;
+    }
+
+    public List<Assignee> listAllAssignees() {
+        List<Todo> todos = new ArrayList<>();
+        todos.addAll(todoRepository.findAll());
+
+        List<Assignee> result = new ArrayList<>();
+        todos.stream()
+                .filter(todo -> todo.getAssignee() != null)
+                .forEach(todo -> result.add(todo.getAssignee()));
+        return result;
     }
 }

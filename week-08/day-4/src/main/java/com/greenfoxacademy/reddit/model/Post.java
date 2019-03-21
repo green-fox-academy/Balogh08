@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +14,8 @@ public class Post {
     private String link;
     @Temporal(TemporalType.DATE)
     private Date date;
+    @ManyToOne
+    private User user;
 
     public Post() {
         numberLike = 0;
@@ -74,5 +77,13 @@ public class Post {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

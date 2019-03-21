@@ -39,3 +39,20 @@ nativeQuery = true)
 
 ALAP ELV:
 sose listázom le az összes recordot, limitelem vagy specifikálom, hogy mit kérem
+
+new --> project from existing source MINDEN ESETBEN MIKOR MÁR KÉSZ PROJECTET NYITOK MEG
+
+controller - @Controller
+	@Autowired
+
+service - @Service
+	@Autowired
+
+repository - @Repository
+	@Query
+
+model - @Entity
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTYTY/AUTO)
+	@ManyToMany(cascade = CascadeType.All, mappedBy = "...", fetch = FetchType.EAGER)
+	@Temporal(TemporalType.DATE)

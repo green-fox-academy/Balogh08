@@ -1,6 +1,7 @@
 package com.greenfoxacademy.practicetodo.controller;
 
 import com.greenfoxacademy.practicetodo.model.Assignee;
+import com.greenfoxacademy.practicetodo.service.AssigneeService;
 import com.greenfoxacademy.practicetodo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,12 @@ import java.text.ParseException;
 public class TodoController {
 
     private TodoService todoService;
+    private AssigneeService assigneeService;
 
     @Autowired
-    public TodoController(TodoService todoService) {
+    public TodoController(TodoService todoService, AssigneeService assigneeService) {
         this.todoService = todoService;
+        this.assigneeService = assigneeService;
     }
 
     @RequestMapping(value = {"", "/", "/list"}, method = RequestMethod.GET)
@@ -52,12 +55,13 @@ public class TodoController {
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String getEdit(Model model, @PathVariable("id") Long id) {
         model.addAttribute("todo", todoService.findById(id));
+        model.addAttribute("assignees", assigneeService.listAll());
         return "edit";
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.PUT)
-    public String edit(@PathVariable("id") Long id, String title, Boolean urgent, Boolean done) {
-        todoService.edit(id, title, urgent, done);
+    public String edit(@PathVariable("id") Long id, String title, Boolean urgent, Boolean done, Assignee assignee) {
+        todoService.edit(id, title, urgent, done, assignee);
         return "redirect:/todo";
     }
 
@@ -76,4 +80,7 @@ public class TodoController {
         }
         return "index";
     }
+
+//    @PutMapping("/set/assignee")
+//    public String setAssignee(Model model, @RequestParam("assignee"))
 }

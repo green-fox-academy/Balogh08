@@ -27,6 +27,12 @@
                         <label for="done">Done</label>
                         <input type="checkbox" id="done" th:field="*{done}" name="done">
                     </td>
+                    <td>
+                        <select name="assignee">
+                            <option th:each="assignee : ${assignees}" th:text="${assignee.name}" th:value="${assignee.id}"></option>
+                        </select>
+                    </td>
+
                 </tr>
                 <tr>
                     <td>

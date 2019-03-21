@@ -20,18 +20,20 @@ public class AliasController {
         this.aliasService = aliasService;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/")
     public String main(@ModelAttribute("alias") Alias alias) {
         return "index";
     }
 
-    @GetMapping("/get/{id}")
-    public String mainWithAlias(Model model, @PathVariable(value = "id", required = false) Long id) {
-        if (id !=null) {
-            model.addAttribute("alias", aliasService.getById(id));
-        }
-        return "index";
-    }
+//    @GetMapping("/get/{id}")
+//    public String mainWithAlias(Model model, @PathVariable(value = "id", required = false) Long id) {
+//        if (!aliasService.existById(id)) {
+//            model.addAttribute("alias", aliasService.getById(id));
+//        } else if (aliasService.existById(id)) {
+//           model.addAttribute("alias", new Alias());
+//        }
+//        return "index";
+//    }
 
     @PostMapping("/save-link")
     public String saveLink(@ModelAttribute("alias") Alias alias) {

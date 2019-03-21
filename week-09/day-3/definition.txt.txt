@@ -1,0 +1,6 @@
+targetEntity = id alapján összeköti egy kapcsoló táblával
+mappedBy = "post" ami a comment classban a OneToMany hez írt private field alapja ("post)
+	ha mindkét irányból el akarok érni mindent, akkor mappedBy be jön a képbe
+
+cascade type = azt mondja hogy ha változtatok valamit akkot a többi táblában is  
+ 	.all delete akkor minden hozzátartozót kitörli. ManyToMany-nél mindent kitrörölhet
