@@ -12,16 +12,19 @@ public class Alias {
     private long id;
 
     private String url;
-    private String alias;
+    private String aliasName;
     private int hitCount;
     private String secretCode;
 
     public Alias() {
+        secretCode = String.format ("%04d" ,(int) (Math.random() * 10000));
+        hitCount = 0;
     }
 
     public Alias(String url, String alias) {
         this.url = url;
-        this.alias = alias;
+        this.aliasName = aliasName;
+        hitCount = 0;
         secretCode = String.format ("%04d" ,(int) (Math.random() * 10000));
     }
 
@@ -37,12 +40,12 @@ public class Alias {
         this.url = url;
     }
 
-    public String getAlias() {
-        return alias;
+    public String getAliasName() {
+        return aliasName;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
     }
 
     public int getHitCount() {

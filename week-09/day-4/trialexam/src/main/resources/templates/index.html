@@ -7,7 +7,7 @@
 <body>
 <h2>Default</h2>
 
-<p th:if="${alias.alias != null}" th:utext="'Your URL is aliased to ' + ${alias.alias} + 'and your secret code is ' + ${alias.secretCode}"></p>
+<p th:if="${alias.aliasName != null}" th:utext="'Your URL is aliased to ' + ${alias.aliasName} + ' and your secret code is ' + ${alias.secretCode}"></p>
 
 <form action="#" th:action="@{'/save-link'}" th:method="POST" th:object="${alias}">
     <label>
@@ -20,7 +20,7 @@
     <label>
         Alias
         <br>
-        <input type="text" th:field="*{alias}">
+        <input type="text" th:field="*{aliasName}">
     </label>
     <br>
 
