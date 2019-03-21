@@ -1,5 +1,7 @@
 package com.greenfoxacademy.trialexam.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -59,6 +61,7 @@ public class Alias {
         this.hitCount++;
     }
 
+    @JsonIgnore
     public String getSecretCode() {
         return secretCode;
     }

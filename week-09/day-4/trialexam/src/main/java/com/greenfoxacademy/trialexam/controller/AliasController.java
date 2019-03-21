@@ -44,13 +44,25 @@ public class AliasController {
     }
 
     @GetMapping("/a/{aliasName}")
-    public Object goWebpage(@PathVariable("aliasName") String aliasName) {
+    public String goWebpage(@PathVariable("aliasName") String aliasName) {
         if (aliasService.getByAliasName(aliasName) != null) {
             aliasService.increaseHits(aliasName);
             return "redirect:" + aliasService.getByAliasName(aliasName).getUrl();
         } else {
-            ResponseEntity responseEntity = new ResponseEntity( "404 hiba kód",null,HttpStatus.NOT_FOUND);
-            return responseEntity;
+            return "redirect:/error";
         }
+    }
+
+    @GetMapping("/error")
+    @ResponseStatus(code = HttpStatus.FORBIDDEN)
+    public String errorPage() {
+        return "error";
+    }
+
+    @GetMapping("/api/links")
+    @ResponseBody
+    public Object links() {
+
+        return aliasService.listAll();
     }
 }
