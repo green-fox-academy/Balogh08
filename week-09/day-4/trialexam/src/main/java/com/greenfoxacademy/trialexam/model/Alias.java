@@ -15,10 +15,12 @@ public class Alias {
     private String aliasName;
     private int hitCount;
     private String secretCode;
+    private boolean duplicate;
 
     public Alias() {
         secretCode = String.format ("%04d" ,(int) (Math.random() * 10000));
         hitCount = 0;
+        duplicate = false;
     }
 
     public Alias(String url, String alias) {
@@ -26,6 +28,7 @@ public class Alias {
         this.aliasName = aliasName;
         hitCount = 0;
         secretCode = String.format ("%04d" ,(int) (Math.random() * 10000));
+        duplicate = false;
     }
 
     public long getId() {
@@ -52,16 +55,28 @@ public class Alias {
         return hitCount;
     }
 
-    public void setHitCount(int hitCount) {
-        this.hitCount = hitCount;
+    public void setHitCount() {
+        this.hitCount++;
     }
 
     public String getSecretCode() {
         return secretCode;
     }
 
+    public boolean isDuplicate() {
+        return duplicate;
+    }
+
+    public void setDuplicate(boolean duplicate) {
+        this.duplicate = duplicate;
+    }
+
     @Override
     public String toString() {
-        return "Your URL is aliased to <b>" + aliasName + "</b> and your secret code is <b>" + secretCode + "</b>";
+        if (!duplicate) {
+            return "Your URL is aliased to <b>" + aliasName + "</b> and your secret code is <b>" + secretCode + "</b>";
+        } else {
+            return "Your alias is already in use!";
+        }
     }
 }

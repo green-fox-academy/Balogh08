@@ -26,5 +26,31 @@ public class AliasService {
         aliasRepository.save(alias);
     }
 
+    public boolean isExist(String aliasName) {
+        List<Alias> aliases = new ArrayList<>(aliasRepository.findAll());
+        for (Alias alias : aliases) {
+            if (alias.getAliasName().equalsIgnoreCase(aliasName)) {
+                aliasRepository.findById(alias.getId()).get().setDuplicate(true);
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public Alias getByAliasName(String aliasName) {
+        if (aliasRepository.findAliasByAliasName(aliasName) != null) {
+            return aliasRepository.findAliasByAliasName(aliasName);
+        }
+        return null;
+    }
+
+    public void increaseHits(String aliasName) {
+        for (Alias alias : aliasRepository.findAll()) {
+            if (alias.getAliasName().equalsIgnoreCase(aliasName)) {
+                alias.setHitCount();
+                aliasRepository.save(alias);
+                System.out.println(alias.getHitCount());
+            }
+        }
+    }
 }

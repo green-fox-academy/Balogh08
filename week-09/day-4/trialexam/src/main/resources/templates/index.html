@@ -8,6 +8,7 @@
 <h2>Default</h2>
 
 <p th:if="${alias.aliasName != null}" th:utext="${alias.toString()}"></p>
+<p th:if="${alias.duplicate}" style="color:red" th:utext="${alias.toString()}"></p>
 
 <form action="#" th:action="@{'/save-link'}" th:method="POST" th:object="${alias}">
     <label>
