@@ -59,4 +59,9 @@ public class Alias {
     public String getSecretCode() {
         return secretCode;
     }
+
+    @Override
+    public String toString() {
+        return "Your URL is aliased to <b>" + aliasName + "</b> and your secret code is <b>" + secretCode + "</b>";
+    }
 }
