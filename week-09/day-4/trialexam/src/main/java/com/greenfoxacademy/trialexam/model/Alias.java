@@ -14,7 +14,7 @@ public class Alias {
     private String url;
     private String alias;
     private int hitCount;
-    private int secretCode;
+    private String secretCode;
 
     public Alias() {
     }
@@ -22,6 +22,7 @@ public class Alias {
     public Alias(String url, String alias) {
         this.url = url;
         this.alias = alias;
+        secretCode = String.format ("%04d" ,(int) (Math.random() * 10000));
     }
 
     public long getId() {
@@ -52,11 +53,7 @@ public class Alias {
         this.hitCount = hitCount;
     }
 
-    public int getSecretCode() {
+    public String getSecretCode() {
         return secretCode;
-    }
-
-    public void setSecretCode(int secretCode) {
-        this.secretCode = secretCode;
     }
 }

@@ -22,5 +22,9 @@ public class AliasService {
         return aliasRepository.findById(id).get();
     }
 
+    public void createAlias(Alias alias) {
+        aliasRepository.save(alias);
+    }
+
 
 }
