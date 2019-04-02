@@ -1,0 +1,7 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\bin\Debug\week1.exe.config
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\bin\Debug\week1.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\bin\Debug\week1.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\obj\Debug\week1.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\obj\Debug\week1.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\obj\Debug\week1.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\SwitchStatement\week1\obj\Debug\week1.pdb
