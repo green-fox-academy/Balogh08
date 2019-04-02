@@ -32,6 +32,15 @@ SELECT reviewer.name, movie.title, rating.stars, rating.ratingDate FROM rating
     ON movie.mID = rating.mID
     ORDER BY reviewer.name, movie.title, rating.stars;
 
+
+Orientation Exam
+SELECT employees.name FROM employees
+	INNER JOIN devices
+	ON employees.id = devices.employee_id
+	ORDER BY employees.name
+	WHERE employees.role LIKE "psychologist"
+	AND devices.type LIKE "mobile";
+
 SELECT reviewer.name, movie.title, stars FROM rating
     INNER JOIN movie
     ON movie.mID = rating.mID
