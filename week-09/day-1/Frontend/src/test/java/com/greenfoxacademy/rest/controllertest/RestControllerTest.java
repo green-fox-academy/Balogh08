@@ -120,7 +120,7 @@ public class RestControllerTest {
                 .content("{\"what\":\"sum\"," + "\"numbers\":[2,3,5,6]}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.result",
-                        is(16))); // TODO: 2019. 03. 19. $.result solve 
+                        is(16))); // TODO: 2019. 03. 19. $.result solve
     }
 
 }
