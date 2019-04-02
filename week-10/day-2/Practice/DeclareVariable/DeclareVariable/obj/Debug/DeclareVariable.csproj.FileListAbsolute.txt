@@ -1,0 +1,7 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\bin\Debug\DeclareVariable.exe.config
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\bin\Debug\DeclareVariable.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\bin\Debug\DeclareVariable.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\obj\Debug\DeclareVariable.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\obj\Debug\DeclareVariable.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\obj\Debug\DeclareVariable.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-2\Practice\DeclareVariable\DeclareVariable\obj\Debug\DeclareVariable.pdb

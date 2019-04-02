@@ -1,0 +1,7 @@
+bool isSkyBlue;  //true or false
+isSkyBlue = true;
+Console.WriteLine(isSkyBlue);
+
+and &&
+or ||
+not !
