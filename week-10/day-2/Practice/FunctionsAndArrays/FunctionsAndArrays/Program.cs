@@ -9,6 +9,8 @@ namespace FunctionsAndArrays
 {
     class Program
     {
+        public static object MessageBox { get; private set; }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Tell me which number to fract!");
@@ -72,6 +74,7 @@ namespace FunctionsAndArrays
             Array.Sort(toBeSorted);
             printAll(toBeSorted);
             Console.ReadLine();
+
             
 
         }
