@@ -71,20 +71,33 @@ namespace ReadFile
 
             Console.ReadLine();
 
-            StreamReader myReader2 = new StreamReader(@"..\..\beep.txt");
+            //StreamReader myReader2 = new StreamReader(@"..\..\beep.txt");
 
-            string data = myReader2.ReadLine();
-            
-            while (data != null)
+            //string data = myReader2.ReadLine();
+
+            //while (data != null)
+            //{
+            //    Console.WriteLine(data);
+            //    string[] values = data.Split(',');
+            //    int frequency = Int32.Parse(values[0]);
+            //    int duration = Int32.Parse(values[1]);
+            //    Console.Beep(frequency, duration);
+            //    data = myReader2.ReadLine();
+            //}
+            //Console.ReadLine();
+            string fileName = "my-file";
+            File.WriteAllText("my-file", "Hello\nBoti\nvagyok\n!");
+            try
             {
-                Console.WriteLine(data);
-                string[] values = data.Split(',');
-                int frequency = Int32.Parse(values[0]);
-                int duration = Int32.Parse(values[1]);
-                Console.Beep(frequency, duration);
-                data = myReader2.ReadLine();
+                Console.WriteLine(File.ReadAllText(fileName));
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                Console.WriteLine($"Unable to read file: {fileName}");
             }
             Console.ReadLine();
+
+            File.Delete("my-files");
         }
     }
 }
