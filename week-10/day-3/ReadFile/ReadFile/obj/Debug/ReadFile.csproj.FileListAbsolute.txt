@@ -1,0 +1,9 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\bin\Debug\ReadFile.exe.config
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\bin\Debug\ReadFile.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\bin\Debug\ReadFile.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\obj\Debug\ReadFile.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\obj\Debug\ReadFile.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\obj\Debug\ReadFile.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\obj\Debug\ReadFile.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\bin\Debug\TextFile1.txt
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-3\ReadFile\ReadFile\bin\Debug\beep.txt
