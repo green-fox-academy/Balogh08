@@ -1,0 +1,7 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\bin\Debug\Zoo.exe.config
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\bin\Debug\Zoo.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\bin\Debug\Zoo.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\obj\Debug\Zoo.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\obj\Debug\Zoo.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\obj\Debug\Zoo.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-4\Zoo\Zoo\obj\Debug\Zoo.pdb
