@@ -11,6 +11,8 @@ namespace Zoo
         private string name;
         private int age;
         private Gender gender;
+        //prop and tab tab
+
 
         public Animal(string name, int age, Gender gender)
         {
@@ -27,7 +29,7 @@ namespace Zoo
 
         public abstract void WantChild();
 
-        public abstract void ToString();
+        public abstract new void ToString();
 
     }
 }
