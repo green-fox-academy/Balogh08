@@ -1,0 +1,7 @@
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\bin\Debug\ClasssesAndObject.exe.config
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\bin\Debug\ClasssesAndObject.exe
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\bin\Debug\ClasssesAndObject.pdb
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\obj\Debug\ClasssesAndObject.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\obj\Debug\ClasssesAndObject.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\obj\Debug\ClasssesAndObject.exe
+C:\Users\Balogh Botond\source\repos\ClasssesAndObject\ClasssesAndObject\obj\Debug\ClasssesAndObject.pdb
