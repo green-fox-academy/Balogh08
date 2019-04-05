@@ -1,0 +1,7 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\bin\Debug\LinQ.exe.config
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\bin\Debug\LinQ.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\bin\Debug\LinQ.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\obj\Debug\LinQ.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\obj\Debug\LinQ.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\obj\Debug\LinQ.exe
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-10\day-5\LinQ\LinQ\obj\Debug\LinQ.pdb
