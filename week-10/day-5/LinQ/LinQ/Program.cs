@@ -78,12 +78,84 @@ namespace LinQ
                 Console.WriteLine(@"Charachter: {0} , apperance: {1}", charachter.Key, charachter.Count());
             }
 
+            Console.WriteLine("-------------Exercise Delegate and Func-------------");
+
             int[] myNumbers = { 1,2,3,4,5};
 
             Func<int, int, int> addFunciton = delegate(int a, int b){
                 return a + b;
             };
             Console.WriteLine(myNumbers.Aggregate(addFunciton));
+
+            Console.WriteLine("-------------Exercise 7-------------");
+
+            string[] cities = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+
+            var exc7lambda = cities.Where(x => x[0] == 'A' && x[x.Length - 1] == 'I');
+
+            foreach (var city in exc7lambda)
+            {
+                Console.WriteLine(@"City: {0}", city);
+            }
+
+            var exc7 = from c in cities
+                       where (c[0] == 'Z' && c[c.Length - 1] == 'H')
+                       select (c);
+
+            foreach (var c in exc7)
+            {
+                Console.WriteLine(@"City: {0}", c);
+            }
+
+            Console.WriteLine("-------------Exercise 8-------------");
+
+            string[] cities2 = { "Rome", "London", "Nairobi", "CalifOrnia", "Zurich", "New Deldhi"};
+
+            var exc8 = from c in cities2
+                       from chars in c
+                       where Char.IsUpper(chars)
+                       select chars;
+
+            foreach (var chars in exc8)
+            {
+                Console.WriteLine(@"Character: {0}", chars);
+            }
+
+            List<char> chars2 = new List<char>();
+
+            foreach (string city in cities2)
+            {
+                for(int i = 0; i < city.Length; i++)
+                {
+                    if (Char.IsUpper(city[i]))
+                    {
+                        Console.WriteLine(@"Character by for: {0}
+                        ", city[i]);
+                    }
+                }
+            }
+
+            Console.WriteLine("-------------Exercise 9-------------");
+
+            char[] myCharacterArray = { 'B', 'o', 't', 'i' };
+
+            var exc9 = from c in myCharacterArray
+                       select c;
+
+            string exc9String = "";
+
+            StringBuilder myBuilder = new StringBuilder();
+
+            foreach(char c in myCharacterArray)
+            {
+                exc9String += c;
+                myBuilder.Append(c);
+            }
+
+            Console.WriteLine(exc9String);
+            Console.WriteLine(myBuilder);
+
+
 
             Console.ReadLine();
            
