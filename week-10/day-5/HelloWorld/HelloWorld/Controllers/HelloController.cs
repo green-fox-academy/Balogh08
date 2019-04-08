@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HelloWorld.Controllers
 {   
+    //[Route("[contorller]") --> hello
     [Route("web")]
     public class HelloController : Controller
     {
