@@ -1,0 +1,57 @@
+﻿@model Simba.ViewModel.AccountIndex
+@{
+    ViewData["Title"] = "index";
+}
+@{ 
+    Layout = @"Shared\_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<h2>Bank Accounts</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Type</th>
+            <th>Good</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in @Model.Accounts)
+        {
+        <tr>
+            <td>@account.Id</td>
+            @if (!@account.IsKing)
+            {
+                <td>@account.Name</td>
+            }
+            else
+            {
+                <td style="color:gold">@account.Name</td>
+            }
+            <td>@account.Balance.ToString("0.00") Zebra</td>
+            <td>@account.AnimalType</td>
+            @switch (account.IsGood)
+            {
+                case true:
+                    <td>Good guy</td>
+                    break;
+                case false:
+                    <td>Bad guy</td>
+                    break;
+            }
+            <td><form method="post" action="add/@account.Id">
+                <input type="submit" value="Add gold" /></form>
+            </td>
+            <td><form method="get" asp-action="SingleAccount" asp-controller="Account">
+                <input type="submit" value="Get Account" /></form>
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>

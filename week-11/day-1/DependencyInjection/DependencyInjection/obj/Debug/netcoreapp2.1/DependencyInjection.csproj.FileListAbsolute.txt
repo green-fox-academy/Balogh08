@@ -1,0 +1,14 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\bin\Debug\netcoreapp2.1\DependencyInjection.deps.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\bin\Debug\netcoreapp2.1\DependencyInjection.runtimeconfig.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\bin\Debug\netcoreapp2.1\DependencyInjection.runtimeconfig.dev.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\bin\Debug\netcoreapp2.1\DependencyInjection.dll
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.RazorAssemblyInfo.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.RazorAssemblyInfo.cs
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.AssemblyInfoInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.AssemblyInfo.cs
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.RazorTargetAssemblyInfo.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\bin\Debug\netcoreapp2.1\DependencyInjection.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.dll
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-1\DependencyInjection\DependencyInjection\obj\Debug\netcoreapp2.1\DependencyInjection.pdb
