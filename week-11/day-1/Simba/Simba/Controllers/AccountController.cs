@@ -10,13 +10,19 @@ namespace Simba.Controllers
 {
     [Route("")]
     public class AccountController : Controller
+
     {
-        static AccountIndex accounts = new AccountIndex();
+        AccountIndex Accounts;
+
+        public AccountController(AccountIndex accounts)
+        {
+            this.Accounts = accounts;
+        }
 
         [HttpGet("show")]
         public IActionResult Index()
         {
-            return View(accounts);
+            return View(Accounts);
         }
 
         [HttpGet("html")]
@@ -29,17 +35,17 @@ namespace Simba.Controllers
         }
 
         [HttpPost("add/{id}")]
-        public IActionResult AddGold([FromQuery]int Id)
+        public IActionResult AddGold(int Id)
         {
-            accounts.FindById(Id).IncreaseBalance();
+            Accounts.FindById(Id).IncreaseBalance();
             return Redirect("/show");
         }
 
         [HttpGet("show/{id}")]
-        public IActionResult SingleAccount([FromQuery]int Id)
+        public IActionResult SingleAccount(int Id)
         {
-            
-            return View(accounts.FindById(Id));
+            BankAccount account = Accounts.FindById(Id);
+            return View(account);
         }
 
     }

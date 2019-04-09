@@ -43,11 +43,15 @@
                     <td>Bad guy</td>
                     break;
             }
-            <td><form method="post" action="add/@account.Id">
-                <input type="submit" value="Add gold" /></form>
+            <td><form method="post" action="add/{@account.Id}">
+                @*<input type="submit" value="Add gold" />*@
+<button type="submit" value="@account.Id" name="Id">Add gold</button>
+</form>
             </td>
-            <td><form method="get" asp-action="SingleAccount" asp-controller="Account">
-                <input type="submit" value="Get Account" /></form>
+            <td><form method="get" action="show/{@account.Id}">
+                @*<input type="submit" value="Get Account" />*@
+                <button type="submit" value="@account.Id" name="Id">Get account</button>
+</form>
             </td>
 
 
