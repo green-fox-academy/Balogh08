@@ -1,0 +1,14 @@
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.csproj.CoreCompileInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.RazorAssemblyInfo.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.RazorAssemblyInfo.cs
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.AssemblyInfoInputs.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.AssemblyInfo.cs
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\bin\Debug\netcoreapp2.1\AppSettingJson.deps.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\bin\Debug\netcoreapp2.1\AppSettingJson.runtimeconfig.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\bin\Debug\netcoreapp2.1\AppSettingJson.runtimeconfig.dev.json
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\bin\Debug\netcoreapp2.1\AppSettingJson.dll
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\bin\Debug\netcoreapp2.1\AppSettingJson.pdb
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.csprojAssemblyReference.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.RazorTargetAssemblyInfo.cache
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.dll
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\AppSettingJson\AppSettingJson\obj\Debug\netcoreapp2.1\AppSettingJson.pdb
