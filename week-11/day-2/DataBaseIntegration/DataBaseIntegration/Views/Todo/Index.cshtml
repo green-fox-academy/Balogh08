@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Urgent</th>
+            <th>Done</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var todo in Model)
+        { 
+        <tr>
+            <td>@todo.Id</td>
+            <td>@todo.Title</td>
+            <td>@todo.IsUrgent</td>
+            <td>@todo.IsDone</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
