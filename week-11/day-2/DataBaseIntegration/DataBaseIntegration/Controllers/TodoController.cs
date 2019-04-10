@@ -32,14 +32,21 @@ namespace DataBaseIntegration.Controllers
         }
 
         [HttpGet("mytodos")]
-        public IActionResult Index(bool IsActive)
+        public IActionResult Index(string IsActive)
         {
             // Create a SQL query in the background
 
-            if (IsActive)
+            if (IsActive.Equals("true"))
             {
                 var todos = ApplicationContext.Todos
                 .Where(x => x.IsDone == false)
+                .ToList();
+                return View(todos);
+            }
+            else if(IsActive.Equals("false"))
+            {
+                var todos = ApplicationContext.Todos
+                .Where(x => x.IsDone == true)
                 .ToList();
                 return View(todos);
             }
