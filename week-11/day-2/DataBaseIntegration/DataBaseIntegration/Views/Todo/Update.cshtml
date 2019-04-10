@@ -1,7 +1,40 @@
-﻿
+﻿@model DataBaseIntegration.Models.Todo
 @{
     ViewData["Title"] = "update";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h2>update</h2>
 
+
+<ul>
+    <li>@Model.Id</li>
+    <li>@Model.Title</li>
+    <li>@Model.IsUrgent</li>
+    <li>@Model.IsUrgent</li>
+</ul>
+
+
+@*<form asp-controller="Todo" asp-action="UpdateTodo">*@
+    <form asp-controller="Todo" asp-action="UpdateTodo" asp-route-id="@Model.Id">
+
+    <label>
+        Title
+        <input asp-for="Title" />
+    </label>
+
+    <label>
+        Urgent
+        <input asp-for="IsUrgent" />
+    </label>
+
+    <label>
+        Done
+        <input asp-for="IsDone" />
+    </label>
+
+    @*<button type="submit" name="id" value="@Model.Id">Edit Todo</button>*@
+    <input type="submit" value="Edit Todo" />
+</form>
+
+@DateTime.Now

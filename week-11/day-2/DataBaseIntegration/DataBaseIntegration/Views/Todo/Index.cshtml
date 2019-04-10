@@ -29,8 +29,12 @@
                     </form>
                 </td>
                 <td>
-                    <a asp-controller="Todo" asp-action="DeleteTodoByRoute" asp-route-id="@todo.Id">Delete
-</a>
+                    <a asp-controller="Todo" asp-action="DeleteTodoByRoute" asp-route-id="@todo.Id">
+                        Delete
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="Todo" asp-action="Update" asp-route-id="@todo.Id">Update Todo</a>
                 </td>
             </tr>
         }
@@ -38,5 +42,5 @@
 </table>
 
 <a href="add">Add Todo</a>
-<a href="update">Update Todo</a>
+
 

@@ -73,21 +73,23 @@ namespace DataBaseIntegration.Controllers
             return Redirect("mytodos");
         }
 
-        [HttpGet("update")]
-        public IActionResult Update(int id)
+        [HttpGet("{id}/edit")]
+        public IActionResult Update([FromRoute]long id)
         {
-            return View("update");
+            return View("update", app.Todos.Find(id));
         }
        
-        [HttpPut("update")]
-        public IActionResult UpdateTodo(int id)
+        [HttpPost("{id}/edit")]
+        public IActionResult UpdateTodo(long id, string title, bool isUrgent, bool isDone)
         {
             Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
-            updatedTodo.IsDone = true;
+            updatedTodo.Title = title;
+            updatedTodo.IsUrgent = isUrgent;
+            updatedTodo.IsDone = isDone;
             app.Todos.Update(updatedTodo);
             app.SaveChanges();
 
-            return Redirect("mytodos");
+            return RedirectToAction("Index");
         }
 
         [HttpGet("delete")]
@@ -101,12 +103,14 @@ namespace DataBaseIntegration.Controllers
         }
 
         [HttpGet("{id}/delete")]
-        public IActionResult DeleteTodoByRoute(int id)
+        public IActionResult DeleteTodoByRoute([FromRoute]long id)
         {
-            Todo deletedCustomer = app.Todos.FirstOrDefault(todo => todo.Id == id);
-            app.Todos.Remove(deletedCustomer);
+            //Todo deletedCustomer = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            //app.Todos.Remove(deletedCustomer);
+            app.Todos.Remove(app.Todos.Find(id));
             app.SaveChanges();
 
+            //mivel az Id bent maradna a routbe ezért redirect to action method kell
             return RedirectToAction("Index");
         }
     }
