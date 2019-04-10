@@ -10,11 +10,11 @@ namespace DataBaseIntegration.Controllers
     [Route("todo")]
     public class TodoController : Controller
     {
-        private readonly ApplicationContext ApplicationContext;
+        private readonly ApplicationContext app;
 
         public TodoController(ApplicationContext ApplicationContext)
         {
-            this.ApplicationContext = ApplicationContext;
+            this.app = ApplicationContext;
         }
 
         [HttpGet("list")]
@@ -38,21 +38,21 @@ namespace DataBaseIntegration.Controllers
 
             if (IsActive.Equals("true", StringComparison.InvariantCultureIgnoreCase))
             {
-                var todos = ApplicationContext.Todos
+                var todos = app.Todos
                 .Where(x => x.IsDone == false)
                 .ToList();
                 return View(todos);
             }
             else if(IsActive.Equals("false", StringComparison.InvariantCultureIgnoreCase))
             {
-                var todos = ApplicationContext.Todos
+                var todos = app.Todos
                 .Where(x => x.IsDone == true)
                 .ToList();
                 return View(todos);
             }
             else
             {
-                var todos = ApplicationContext.Todos.ToList();
+                var todos = app.Todos.ToList();
                 return View(todos);
             }
         }
@@ -66,11 +66,48 @@ namespace DataBaseIntegration.Controllers
         [HttpPost("add")]
         public IActionResult AddTodoAndReturnList(string title)
         {
-            ApplicationContext.Todos.Add(new Todo(title));
-            ApplicationContext.SaveChanges();
+            app.Todos.Add(new Todo(title));
+            app.SaveChanges();
 
             //return RedirectToAction("Index");
             return Redirect("mytodos");
+        }
+
+        [HttpGet("update")]
+        public IActionResult Update(int id)
+        {
+            return View("update");
+        }
+       
+        [HttpPut("update")]
+        public IActionResult UpdateTodo(int id)
+        {
+            Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            updatedTodo.IsDone = true;
+            app.Todos.Update(updatedTodo);
+            app.SaveChanges();
+
+            return Redirect("mytodos");
+        }
+
+        [HttpGet("delete")]
+        public IActionResult DeleteTodo(int id)
+        {
+            Todo deletedCustomer = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            app.Todos.Remove(deletedCustomer);
+            app.SaveChanges();
+
+            return Redirect("mytodos");
+        }
+
+        [HttpGet("{id}/delete")]
+        public IActionResult DeleteTodoByRoute(int id)
+        {
+            Todo deletedCustomer = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            app.Todos.Remove(deletedCustomer);
+            app.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
