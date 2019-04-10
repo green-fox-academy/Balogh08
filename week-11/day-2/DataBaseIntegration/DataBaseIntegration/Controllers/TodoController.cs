@@ -32,18 +32,18 @@ namespace DataBaseIntegration.Controllers
         }
 
         [HttpGet("mytodos")]
-        public IActionResult Index(string IsActive)
+        public IActionResult Index(string IsActive="")
         {
             // Create a SQL query in the background
 
-            if (IsActive.Equals("true"))
+            if (IsActive.Equals("true", StringComparison.InvariantCultureIgnoreCase))
             {
                 var todos = ApplicationContext.Todos
                 .Where(x => x.IsDone == false)
                 .ToList();
                 return View(todos);
             }
-            else if(IsActive.Equals("false"))
+            else if(IsActive.Equals("false", StringComparison.InvariantCultureIgnoreCase))
             {
                 var todos = ApplicationContext.Todos
                 .Where(x => x.IsDone == true)
@@ -55,7 +55,22 @@ namespace DataBaseIntegration.Controllers
                 var todos = ApplicationContext.Todos.ToList();
                 return View(todos);
             }
-            
+        }
+
+        [HttpGet("add")]
+        public IActionResult AddTodo()
+        {
+            return View("Add");
+        }
+
+        [HttpPost("add")]
+        public IActionResult AddTodoAndReturnList(string title)
+        {
+            ApplicationContext.Todos.Add(new Todo(title));
+            ApplicationContext.SaveChanges();
+
+            //return RedirectToAction("Index");
+            return Redirect("mytodos");
         }
     }
 }

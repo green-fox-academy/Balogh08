@@ -18,16 +18,17 @@ namespace DataBaseIntegration.Models
 
         public Todo()
         {
-            IdGenerator++;
-            Id = IdGenerator;
+            //Id must be commented as explicit ID generation is not allowed in the DataBase
+            //IdGenerator++;
+            //Id = IdGenerator;
             IsUrgent = false;
             IsDone = false;
         }
 
         public Todo(string Title)
         {
-            IdGenerator++;
-            Id = IdGenerator;
+            //IdGenerator++;
+            //Id = IdGenerator;
             this.Title = Title;
             IsUrgent = false;
             IsDone = false;
