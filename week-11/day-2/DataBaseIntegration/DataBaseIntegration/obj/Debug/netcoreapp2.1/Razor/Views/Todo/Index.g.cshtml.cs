@@ -118,7 +118,7 @@ namespace AspNetCore
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(647, 154, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a17d44a1d74d2b9464b4bf4796aafa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d400ce3af4a4dad99fa53e323467ae5", async() => {
                 BeginContext(682, 57, true);
                 WriteLiteral("\r\n                        <button type=\"submit\" name=\"id\"");
                 EndContext();
@@ -153,7 +153,7 @@ WriteAttributeValue("", 747, todo.Id, 747, 8, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(868, 138, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0835e9efeb074a4191c1d66c85cca832", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "629c849700514af58c78a3721c8804cd", async() => {
                 BeginContext(948, 54, true);
                 WriteLiteral("\r\n                        Delete\r\n                    ");
                 EndContext();
@@ -190,7 +190,7 @@ WriteAttributeValue("", 747, todo.Id, 747, 8, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1073, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7fbb61e3e1c4950aa0b05392b0014f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec55e7e29daf484280c0b3890a6d68ff", async() => {
                 BeginContext(1142, 11, true);
                 WriteLiteral("Update Todo");
                 EndContext();

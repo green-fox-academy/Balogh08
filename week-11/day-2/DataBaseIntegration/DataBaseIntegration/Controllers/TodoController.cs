@@ -54,6 +54,7 @@ namespace DataBaseIntegration.Controllers
             {
                 var todos = app.Todos.ToList();
                 return View(todos);
+                //return Accepted(todos);
             }
         }
 
@@ -76,20 +77,43 @@ namespace DataBaseIntegration.Controllers
         [HttpGet("{id}/edit")]
         public IActionResult Update([FromRoute]long id)
         {
-            return View("update", app.Todos.Find(id));
+            Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            //return View("update", app.Todos.Find(id));
+            //return Accepted(app.Todos.Find(id));
+            return View(updatedTodo);
         }
        
-        [HttpPost("{id}/edit")]
-        public IActionResult UpdateTodo(long id, string title, bool isUrgent, bool isDone)
+        [HttpPut("{id}/edit")]
+        public IActionResult UpdateTodo(Todo todo)
         {
-            Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
-            updatedTodo.Title = title;
-            updatedTodo.IsUrgent = isUrgent;
-            updatedTodo.IsDone = isDone;
-            app.Todos.Update(updatedTodo);
+            //Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
+            //updatedTodo.Title = title;
+            //updatedTodo.IsUrgent = isUrgent;
+            //updatedTodo.IsDone = isDone;
+            //app.Todos.Update(updatedTodo);
+
+            //long id, string title, bool isUrgent, bool isDone
+
+            app.Todos.Attach(app.Todos.Find(todo.Id));
+            if(app.Todos.Find(todo.Id).Title != todo.Title)
+            {
+            app.Todos.Find(todo.Id).Title = todo.Title;
+            }
+
+            if(app.Todos.Find(todo.Id).IsUrgent != todo.IsUrgent)
+            {
+            app.Todos.Find(todo.Id).IsUrgent = todo.IsUrgent;
+            }
+
+            if(app.Todos.Find(todo.Id).IsDone != todo.IsDone)
+            {
+            app.Todos.Find(todo.Id).IsDone = todo.IsDone;
+            }
+
             app.SaveChanges();
 
             return RedirectToAction("Index");
+            //return Accepted("Entyt has been modyfied", todo); //postmanben headersnél kiírja, hogy Location →Entyt has been modyfied, bodyban pedig az objectet
         }
 
         [HttpGet("delete")]
@@ -103,15 +127,16 @@ namespace DataBaseIntegration.Controllers
         }
 
         [HttpGet("{id}/delete")]
-        public IActionResult DeleteTodoByRoute([FromRoute]long id)
+        public IActionResult DeleteTodoByRoute([FromRoute]Todo todo)
         {
             //Todo deletedCustomer = app.Todos.FirstOrDefault(todo => todo.Id == id);
             //app.Todos.Remove(deletedCustomer);
-            app.Todos.Remove(app.Todos.Find(id));
+            app.Todos.Remove(app.Todos.Find(todo.Id));
             app.SaveChanges();
 
             //mivel az Id bent maradna a routbe ezért redirect to action method kell
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return Accepted("Entity has been deleted", todo);
         }
     }
 }

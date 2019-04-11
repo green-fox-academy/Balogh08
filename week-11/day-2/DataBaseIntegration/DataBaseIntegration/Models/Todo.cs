@@ -8,13 +8,17 @@ namespace DataBaseIntegration.Models
 {
     public class Todo
     {
-        public long Id { set; get; }
+        public long Id { get; set; }
         public static long IdGenerator { get; private set; }
 
         [Required]
-        public string Title { set; get; }
-        public bool IsUrgent{ set; get; }
-        public bool IsDone{ set; get; }
+        public string Title { get; set; }
+        public string Descriptopn { get; set; }
+        public bool IsUrgent { get; set; }
+        public bool IsDone { get; set; }
+
+        public int? AssigneeId { get; set; } //Foreign Key and int? is for c# to have null value
+        public Assignee Assignee { get; set; } //Navigation Property
 
         public Todo()
         {
