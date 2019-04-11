@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace DataBaseIntegration.Models
         public bool IsDone { get; set; }
 
         public int? AssigneeId { get; set; } //Foreign Key and int? is for c# to have null value
+        [JsonIgnore]
         public Assignee Assignee { get; set; } //Navigation Property
 
         public Todo()

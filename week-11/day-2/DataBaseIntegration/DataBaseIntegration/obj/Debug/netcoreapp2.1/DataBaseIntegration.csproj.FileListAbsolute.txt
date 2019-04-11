@@ -25,3 +25,4 @@ C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\DataBaseIntegrati
 C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\DataBaseIntegration\DataBaseIntegration\obj\Debug\netcoreapp2.1\Razor\Views\Todo\Add.g.cshtml.cs
 C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\DataBaseIntegration\DataBaseIntegration\obj\Debug\netcoreapp2.1\Razor\Views\Todo\update.g.cshtml.cs
 C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\DataBaseIntegration\DataBaseIntegration\obj\Debug\netcoreapp2.1\Razor\Views\Todo\Assignee.g.cshtml.cs
+C:\Users\Balogh Botond\Desktop\GreenFox\Balogh08\week-11\day-2\DataBaseIntegration\DataBaseIntegration\obj\Debug\netcoreapp2.1\Razor\Views\Todo\Index2.g.cshtml.cs

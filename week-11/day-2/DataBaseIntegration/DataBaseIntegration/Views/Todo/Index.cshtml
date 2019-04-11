@@ -11,6 +11,7 @@
             <th>Title</th>
             <th>Urgent</th>
             <th>Done</th>
+            <th>Assignee Name</th>
             <th>Delete through body</th>
             <th>Delete through route</th>
         </tr>
@@ -23,6 +24,7 @@
                 <td>@todo.Title</td>
                 <td>@todo.IsUrgent</td>
                 <td>@todo.IsDone</td>
+                <td>@todo.Assignee.Name</td>
                 <td>
                     <form action="delete" method="get">
                         <button type="submit" name="id" value="@todo.Id">Delete</button>

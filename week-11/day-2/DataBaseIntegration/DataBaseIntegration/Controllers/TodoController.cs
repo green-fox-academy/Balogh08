@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataBaseIntegration.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataBaseIntegration.Controllers
 {
@@ -52,7 +53,7 @@ namespace DataBaseIntegration.Controllers
             }
             else
             {
-                var todos = app.Todos.ToList();
+                var todos = app.Todos.Include(t => t.Assignee).ToList();
                 return View(todos);
                 //return Accepted(todos);
             }
@@ -152,6 +153,24 @@ namespace DataBaseIntegration.Controllers
             app.Assignees.Add(assignee);
             app.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet("connectassigneesandtodos")]
+        public IActionResult Connect()
+        {
+            long todoId = 4;
+            app.Todos.Find(todoId).AssigneeId = 2;
+            app.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("todosPerAssignees")]
+        public IActionResult TodosPerAssignees()
+        {
+            //var assignees = app.Assignees.Include(t => t.Todos).ToList();
+            var assignees = app.Assignees.Include("Todos").ToList();
+            //return View("Index2", assignees);
+            return Ok(assignees);
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index2";
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Assignee Name</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var assignee in Model)
+        {
+            <tr>
+                <td>@assignee.Id</td>
+                <td>@assignee.Name</td>     
+                @foreach (var todo in assignee.Todos)
+                {
+                    <td>@todo.Title ||</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
