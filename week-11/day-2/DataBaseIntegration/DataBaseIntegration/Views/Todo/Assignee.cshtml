@@ -1,0 +1,23 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model DataBaseIntegration.Models.Assignee
+@{
+    ViewData["Title"] = "Assignee";
+}
+
+<h2>Assignee</h2>
+
+<form asp-controller="Todo" asp-action="AddAssignee">
+
+    <label>
+        Name
+        <input asp-for="Name" />
+    </label>
+
+    <label>
+        Email
+        <input asp-for="Email" />
+    </label>
+
+    @*<button type="submit" name="id" value="@Model.Id">Edit Todo</button>*@
+    <input type="submit" value="Add Assignee" />
+</form>

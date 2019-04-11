@@ -83,7 +83,7 @@ namespace DataBaseIntegration.Controllers
             return View(updatedTodo);
         }
        
-        [HttpPut("{id}/edit")]
+        [HttpPost("{id}/edit")]
         public IActionResult UpdateTodo(Todo todo)
         {
             //Todo updatedTodo = app.Todos.FirstOrDefault(todo => todo.Id == id);
@@ -137,6 +137,21 @@ namespace DataBaseIntegration.Controllers
             //mivel az Id bent maradna a routbe ezért redirect to action method kell
             //return RedirectToAction("Index");
             return Accepted("Entity has been deleted", todo);
+        }
+
+        [HttpGet("assignee/add")]
+        public IActionResult AddAssigneePage()
+        {
+            return View("assignee");
+        }
+
+        [HttpPost("assignee/add")]
+        public IActionResult AddAssignee(Assignee assignee)
+        {
+            //Assignee toBeAddedAssignee = new Assignee(assignee.Name, assignee.Email);
+            app.Assignees.Add(assignee);
+            app.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

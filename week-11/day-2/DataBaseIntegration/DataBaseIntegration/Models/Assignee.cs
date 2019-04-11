@@ -18,5 +18,9 @@ namespace DataBaseIntegration.Models
         this.Email = email;
     }
 
+    public Assignee()
+    {
+    }
+
     }
 }
